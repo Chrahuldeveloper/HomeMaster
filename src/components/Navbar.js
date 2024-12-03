@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="border-b-[1px] border-gray-300 p-5">
-        <div className="flex items-center justify-around">
+        <div className="flex items-center justify-around gap-5">
           <div className="flex items-center gap-8">
             <div>
               <img
@@ -18,7 +18,7 @@ export default function Navbar() {
                 alt=""
               />
             </div>
-            <ul className="text-[#545454] flex items-center gap-4">
+            <ul className="text-[#545454] flex items-center gap-2">
               <li className="cursor-pointer">Native</li>
             </ul>
             <div className="flex items-center gap-2">

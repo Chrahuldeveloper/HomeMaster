@@ -18,7 +18,7 @@ export default function Navbar() {
                 alt=""
               />
             </div>
-            <ul className="text-[#545454] flex items-center gap-8">
+            <ul className="text-[#545454] flex items-center gap-4">
               <li className="cursor-pointer">Native</li>
             </ul>
             <div className="flex items-center gap-2">

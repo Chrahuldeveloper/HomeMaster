@@ -86,7 +86,7 @@ export default function Home() {
 
         <div>
           <img
-            className="max-w-sm md:max-w-xl"
+            className="max-w-xs md:max-w-xl"
             src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1696852847761-574450.jpeg"
             alt=""
           />

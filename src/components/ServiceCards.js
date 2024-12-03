@@ -16,7 +16,7 @@ export default function ServiceCards({ tittle, data }) {
                       <img
                         src={i.img}
                         alt=""
-                        className="cursor-pointer rounded-lg w-[60vw]"
+                        className="cursor-pointer rounded-lg w-[75vw]"
                       />
                       <h1 className="font-semibold">{i.tittle}</h1>
                       <p className="text-gray-700">Rs {i.price}</p>

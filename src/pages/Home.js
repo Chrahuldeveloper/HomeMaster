@@ -1,7 +1,11 @@
 import React from "react";
 import { Footer, Navbar, OfferCards, ServiceCards } from "../components/index";
 import Data1 from "../data/Data1";
-import data2 from "../data/AcRepair";
+import data1 from "../data/AcRepair";
+import data2 from "../data/Data2";
+import data3 from "../data/Data3";
+import data4 from "../data/Data4";
+import data5 from "../data/Data5";
 export default function Home() {
   const data = [
     {
@@ -86,7 +90,7 @@ export default function Home() {
 
         <div>
           <img
-            className="max-w-xs md:max-w-xl"
+            className="max-w-xs mx-auto md:max-w-xl"
             src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1696852847761-574450.jpeg"
             alt=""
           />
@@ -121,21 +125,13 @@ export default function Home() {
 
       <OfferCards data={Data1} />
 
-      <ServiceCards tittle={"Home Cleaning"} data={data2} />
-      <ServiceCards tittle={"AC And Appliance Services"} data={data2} />
-      <ServiceCards tittle={"Beauty services"} data={data2} />
-      <ServiceCards tittle={"Pest Control"} data={data2} />
+      <ServiceCards tittle={"Home Cleaning"} data={data4} />
+      <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
+      <ServiceCards tittle={"Pest Control"} data={data3} />
       <ServiceCards tittle={"Painting"} data={data2} />
-      <ServiceCards tittle={"Electrical & Plumbing "} data={data2} />
+      <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
 
-      <div className="flex justify-center my-20">
-        <img
-          src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_1232,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1729254568001-5b659f.jpeg"
-          alt=""
-        />
-      </div>
-
-      <Footer/>
+      <Footer />
     </div>
   );
 }

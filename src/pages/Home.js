@@ -125,10 +125,10 @@ export default function Home() {
 
       <OfferCards data={Data1} />
 
+      <ServiceCards tittle={"Painting"} data={data2} />
       <ServiceCards tittle={"Home Cleaning"} data={data4} />
       <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
       <ServiceCards tittle={"Pest Control"} data={data3} />
-      <ServiceCards tittle={"Painting"} data={data2} />
       <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
 
       <Footer />

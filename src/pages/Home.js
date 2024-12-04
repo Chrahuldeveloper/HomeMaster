@@ -9,49 +9,51 @@ import data5 from "../data/Data5";
 export default function Home() {
   const data = [
     {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1678864013225-bfc1de.jpeg",
+      tittle: "Repair",
+      image: "https://homemaster.in/upload/service/Plumbing.jpg",
     },
+    {
+      tittle: "House cleaning",
+      image: "https://homemaster.in/upload/service/service-img-11.jpg",
+    },
+
+    {
+      tittle: "Carpentry",
+      image: "https://homemaster.in/upload/service/Carpentry.jpg",
+    },
+    {
+      tittle: "Painting",
+      image: "https://homemaster.in/upload/service/Painting.jpg",
+    },
+
+    {
+      tittle: "Electrical",
+      image: "https://homemaster.in/upload/service/Electrical.jpg",
+    },
+    {
+      tittle: "House cleaning",
+      image: "https://homemaster.in/upload/service/service-img-2.jpg",
+    },
+
     {
       tittle: "Ac Repair",
       image:
         "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
     },
+  ];
+
+  const howWeWork = [
     {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
+      tittle: "Book online in 60 seconds",
+      para: "Book & pay online. We'll match you with a trusted, experienced house cleaner",
     },
     {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
+      tittle: "Get a 5 star cleaner",
+      para: "Book & pay online. We'll match you with a trusted, experienced house cleaner",
     },
     {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
-    },
-    {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
-    },
-    {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
-    },
-    {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
-    },
-    {
-      tittle: "Ac Repair",
-      image:
-        "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1679292077307-6143d7.jpeg",
+      tittle: "Manage everything online",
+      para: "Book & pay online. We'll match you with a trusted, experienced house cleaner",
     },
   ];
 
@@ -123,11 +125,30 @@ export default function Home() {
         </div>
       </div>
 
-      <OfferCards data={Data1} />
+      {/* <OfferCards data={Data1} /> */}
+      <div className="flex flex-col items-center gap-5 mt-20 lg:px-7 justify-evenly md:flex-row lg:gap-0">
+        {howWeWork.map((i, id) => {
+          return (
+            <React.Fragment key={id}>
+              <div className="flex flex-col items-center justify-center max-w-sm space-y-3.5 border-gray-300 border-[1px] cursor-pointer  rounded-lg p-5">
+                <div className="w-10 h-10 p-2 font-semibold text-center text-white rounded-full bg-violet-500">
+                  {id + 1}
+                </div>
+                <div className="space-y-2.5 text-center">
+                  <h1 className="text-lg font-semibold">{i.tittle}</h1>
+                  <p className="text-sm">{i.para}</p>
+                </div>
+              </div>
+            </React.Fragment>
+          );
+        })}
+      </div>
+
+      <div className="w-[85vw] mx-auto"></div>
 
       <ServiceCards tittle={"Painting"} data={data2} />
-      <ServiceCards tittle={"Home Cleaning"} data={data4} />
       <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
+      <ServiceCards tittle={"Home Cleaning"} data={data4} />
       <ServiceCards tittle={"Pest Control"} data={data3} />
       <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
 

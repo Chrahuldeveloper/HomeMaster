@@ -3,15 +3,16 @@ import { CiInstagram } from 'react-icons/ci'
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-
+import logo from '../../src/images/logo.png'
 export default function Footer() {
   return (
     <>
       <footer className="bg-[#f5f5f5] md:h-[50vh] p-10">
         <div className="px-40 pt-20">
           <img
-            src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_144,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1648471968852-1f2b01.png"
+            src={logo}
             alt=""
+            className="w-16 h-16 rounded-full shadow-sm cursor-pointer"
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-10 my-10 md:flex-row md:items-start md:justify-evenly">

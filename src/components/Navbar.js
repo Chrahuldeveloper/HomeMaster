@@ -3,19 +3,20 @@ import { CgProfile } from "react-icons/cg";
 import { IoLocationOutline } from "react-icons/io5";
 import ModelLogin from "./ModelLogin";
 import { MdOutlineShoppingCart } from "react-icons/md";
-
+import logo from '../../src/images/logo.png'
 export default function Navbar() {
   const [istoggle, setistoggle] = useState(false);
 
   return (
     <>
-      <nav className="border-b-[1px] border-gray-300 p-5">
+      <nav className="border-b-[1px] border-gray-300 p-4">
         <div className="flex items-center justify-around gap-5">
           <div className="flex items-center gap-8">
             <div>
               <img
-                src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_108,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1687285683825-e6cf23.jpeg"
+                src={logo}
                 alt=""
+                className="w-16 h-16 "
               />
             </div>
             <ul className="text-[#545454] flex items-center gap-2">

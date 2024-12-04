@@ -6,8 +6,8 @@ export default function ServiceCards({ tittle, data }) {
     <>
       <div className="w-[80vw] mx-auto my-14">
         <div>
-          <h1 className="text-xl font-semibold md:text-3xl">{tittle}</h1>
-          <div className="grid grid-cols-1 gap-8 p-12 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <h1 className="text-lg font-semibold md:text-3xl">{tittle}</h1>
+          <div className="grid grid-cols-1 gap-8 p-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {data.map((i, id) => {
               return (
                 <React.Fragment key={id}>

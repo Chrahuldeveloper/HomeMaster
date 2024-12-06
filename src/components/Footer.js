@@ -8,11 +8,11 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-[#f5f5f5] md:h-[50vh] p-10">
-        <div className="px-40 pt-20">
+        <div className="pt-20 pr-4 lg:px-44">
           <img
             src={logo}
             alt=""
-            className="w-16 h-16 rounded-full shadow-sm cursor-pointer"
+            className="w-16 h-16 mx-auto rounded-full shadow-sm cursor-pointer lg:mx-0"
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-10 my-10 md:flex-row md:items-start md:justify-evenly">

@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col gap-5 p-5 mt-12 justify-evenly md:flex-row md:gap-0">
+      <div className="flex flex-col gap-5 p-5 mt-12 justify-evenly lg:flex-row md:gap-0">
         <div className="space-y-6">
           <h1 className="max-w-xs text-3xl font-semibold">
             Home services at your doorstep

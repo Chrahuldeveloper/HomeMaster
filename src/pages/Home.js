@@ -62,9 +62,23 @@ export default function Home() {
     "Electrical & Plumbing": electricalref,
   };
 
+  const [showmenu, setshowmenu] = useState(false);
+
+  const scrolltoexplore = () => {
+    paintingref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    setshowmenu(false);
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar
+        scrolltoexplore={scrolltoexplore}
+        showmenu={showmenu}
+        setshowmenu={setshowmenu}
+      />
       <div className="flex flex-col gap-5 p-5 mt-12 justify-evenly lg:flex-row md:gap-0">
         <div className="space-y-6">
           <h1 className="max-w-xs text-3xl font-semibold">
@@ -162,7 +176,6 @@ export default function Home() {
         })}
       </div>
 
-      {/* Service Sections */}
       <div ref={paintingref}>
         <ServiceCards tittle={"Painting"} data={data2} />
       </div>

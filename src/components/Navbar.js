@@ -11,10 +11,8 @@ import { CiPhone } from "react-icons/ci";
 import { FcAbout } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
   const [istoggle, setistoggle] = useState(false);
-
-  const [showmenu, setshowmenu] = useState(false);
 
   return (
     <>
@@ -27,7 +25,9 @@ export default function Navbar() {
             <ul className="text-[#545454] text-sm  md:flex items-center gap-6 hidden ">
               <li className="cursor-pointer ">About</li>
               <li className="cursor-pointer ">Contact</li>
-              <li className="cursor-pointer ">Explore</li>
+              <li className="cursor-pointer " onClick={scrolltoexplore}>
+                Explore
+              </li>
             </ul>
             <div className="flex items-center gap-2">
               <IoLocationOutline size={23} color="gray" />
@@ -81,7 +81,10 @@ export default function Navbar() {
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
             <ul className="p-6 space-y-10 font-semibold text-center">
-              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
+              <li
+                onClick={scrolltoexplore}
+                className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28"
+              >
                 <FaRegCompass size={23} color="black" />
                 <h1>Explore</h1>
               </li>
@@ -91,7 +94,7 @@ export default function Navbar() {
                   className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28"
                 >
                   <MdOutlineShoppingCart size={23} color="black" />
-                  <h1>Cart</h1>
+                  <h1>Your Cart</h1>
                 </Link>
               </li>
               <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">

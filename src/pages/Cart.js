@@ -1,11 +1,14 @@
 import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   return (
     <div className="">
       <div className="px-8 mt-4 lg:px-96">
-        <FaArrowLeftLong size={25} />
+        <Link to="/">
+          <FaArrowLeftLong size={25} className="cursor-pointer" />
+        </Link>
       </div>
       <div className="flex flex-col items-center justify-center">
         <div className="w-48">

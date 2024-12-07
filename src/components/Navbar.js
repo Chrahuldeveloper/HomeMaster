@@ -81,28 +81,28 @@ export default function Navbar() {
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
             <ul className="p-6 space-y-10 font-semibold text-center">
-              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
                 <FaRegCompass size={23} color="black" />
                 <h1>Explore</h1>
               </li>
               <li>
                 <Link
                   to={"/cart"}
-                  className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer"
+                  className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28"
                 >
                   <MdOutlineShoppingCart size={23} color="black" />
                   <h1>Cart</h1>
                 </Link>
               </li>
-              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
                 <CgProfile size={23} color="black" />
                 <h1>Profile</h1>
               </li>
-              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
                 <FcAbout size={25} color="black" />
                 <h1>About</h1>
               </li>
-              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
                 <CiPhone size={23} color="black" />
                 <h1>Contact</h1>
               </li>

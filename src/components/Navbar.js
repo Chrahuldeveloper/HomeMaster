@@ -117,7 +117,6 @@ export default function Navbar() {
           </div>
         </aside>
       ) : null}
-
       {istoggle ? <ModelLogin setistoggle={setistoggle} /> : null}
     </>
   );

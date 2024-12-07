@@ -9,6 +9,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaRegCompass } from "react-icons/fa";
 import { CiPhone } from "react-icons/ci";
 import { FcAbout } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [istoggle, setistoggle] = useState(false);
@@ -39,18 +40,24 @@ export default function Navbar() {
                 setshowmenu(true);
               }}
               size={23}
-              color="gray"
+              color="black"
               className="cursor-pointer"
             />
           </div>
           <div className="items-center hidden gap-5 md:flex">
-            <MdOutlineShoppingCart size={25} color="gray" cursor={"pointer"} />
+            <Link to="/cart">
+              <MdOutlineShoppingCart
+                size={25}
+                color="black"
+                cursor={"pointer"}
+              />
+            </Link>
             <CgProfile
               onClick={() => {
                 setistoggle(true);
               }}
               size={25}
-              color="gray"
+              color="black"
               cursor={"pointer"}
             />
           </div>
@@ -58,8 +65,8 @@ export default function Navbar() {
       </nav>
       {showmenu ? (
         <aside className="fixed inset-0 z-50 h-full bg-black bg-opacity-75 backdrop-blur-md">
-          <div className="text-[#545454] text-sm w-[45vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
-            <div className="mt-2 translate-x-60">
+          <div className="text-[#545454] text-sm w-[48vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
+            <div className="mt-2 translate-x-64">
               <RxCross2
                 size={17}
                 color="black"
@@ -70,28 +77,33 @@ export default function Navbar() {
                 }}
               />
             </div>
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center">
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
-            <ul className="p-6 space-y-8 text-center">
-              <li className="flex items-center justify-between w-24 gap-6 mx-auto cursor-pointer">
-                <FaRegCompass size={23} />
+            <ul className="p-6 space-y-10 font-semibold text-center">
+              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+                <FaRegCompass size={23} color="black" />
                 <h1>Explore</h1>
               </li>
-              <li className="flex items-center justify-between w-24 gap-6 mx-auto cursor-pointer">
-                <MdOutlineShoppingCart size={23} />
-                <h1>Cart</h1>
+              <li>
+                <Link
+                  to={"/cart"}
+                  className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer"
+                >
+                  <MdOutlineShoppingCart size={23} color="black" />
+                  <h1>Cart</h1>
+                </Link>
               </li>
-              <li className="flex items-center justify-between w-24 gap-6 mx-auto cursor-pointer">
-                <CgProfile size={23} />
+              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+                <CgProfile size={23} color="black" />
                 <h1>Profile</h1>
               </li>
-              <li className="flex items-center justify-between w-24 gap-6 mx-auto cursor-pointer">
-                <FcAbout size={25} />
+              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+                <FcAbout size={25} color="black" />
                 <h1>About</h1>
               </li>
-              <li className="flex items-center justify-between w-24 gap-6 mx-auto cursor-pointer">
-                <CiPhone size={23} />
+              <li className="flex items-center justify-between w-32 gap-6 mx-auto cursor-pointer">
+                <CiPhone size={23} color="black" />
                 <h1>Contact</h1>
               </li>
             </ul>

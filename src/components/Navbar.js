@@ -65,10 +65,10 @@ export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
       </nav>
       {showmenu ? (
         <aside className="fixed inset-0 z-50 h-full bg-black bg-opacity-75 backdrop-blur-md">
-          <div className="text-[#545454] text-sm w-[48vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
-            <div className="mt-2 translate-x-64">
+          <div className="text-[#545454] text-sm w-[68vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
+            <div className="flex justify-end px-5 mt-3">
               <RxCross2
-                size={17}
+                size={27}
                 color="black"
                 className="p-1 bg-white rounded-full cursor-pointer w-7 h-7"
                 cursor={"pointer"}

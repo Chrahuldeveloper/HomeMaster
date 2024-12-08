@@ -88,13 +88,13 @@ export default function Home() {
             <h1 className="text-[#545454] text-xl font-semibold">
               What are you looking for?
             </h1>
-            <div className="grid grid-cols-3 gap-7">
+            <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-3 border-[1px] p-6 border-gray-300 gap-5 max-w-md">
               {data.map((i, id) => {
                 return (
                   <React.Fragment key={id}>
                     <div className="flex flex-col items-center gap-3 ">
                       <div
-                        className="cursor-pointer w-28"
+                        className="cursor-pointer "
                         onClick={() => {
                           setshowservice(i.tittle);
                           refs[i.tittle]?.current?.scrollIntoView({

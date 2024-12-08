@@ -65,10 +65,10 @@ export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
       </nav>
       {showmenu ? (
         <aside className="fixed inset-0 z-50 h-full bg-black bg-opacity-75 backdrop-blur-md">
-          <div className="text-[#545454] text-sm w-[68vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
+          <div className="text-[#545454] text-sm w-[75vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
             <div className="flex justify-end px-5 mt-3">
               <RxCross2
-                size={27}
+                size={33}
                 color="black"
                 className="p-1 bg-white rounded-full cursor-pointer w-7 h-7"
                 cursor={"pointer"}
@@ -80,7 +80,7 @@ export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
             <div className="flex flex-col items-center">
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
-            <ul className="p-6 space-y-10 font-semibold text-center">
+            <ul className="px-5 mt-5 space-y-10 font-semibold text-center">
               <li
                 onClick={scrolltoexplore}
                 className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28"

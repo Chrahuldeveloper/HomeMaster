@@ -20,7 +20,7 @@ export default function Service() {
 
   return (
     <div>
-      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} />
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={false} />
 
       <div className="w-[90vw] sm:w-[80vw] md:w-[97vw] lg:w-[84vw] mx-auto border-[1px] p-6 my-7">
         <div className="flex flex-col justify-between md:flex-row">

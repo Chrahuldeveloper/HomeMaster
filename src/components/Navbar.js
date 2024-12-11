@@ -11,7 +11,7 @@ import { CiPhone } from "react-icons/ci";
 import { FcAbout } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ showmenu, setshowmenu }) {
+export default function Navbar({ showmenu, setshowmenu, explore }) {
   const [istoggle, setistoggle] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function Navbar({ showmenu, setshowmenu }) {
             <ul className="text-[#545454] text-sm  md:flex items-center gap-6 hidden ">
               <li className="cursor-pointer ">About</li>
               <li className="cursor-pointer ">Contact</li>
-              <li className="cursor-pointer ">Explore</li>
+              {explore ? <li className="cursor-pointer ">Explore</li> : null}
             </ul>
             <div className="flex items-center gap-2">
               <IoLocationOutline size={23} color="gray" />
@@ -79,10 +79,12 @@ export default function Navbar({ showmenu, setshowmenu }) {
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
             <ul className="pl-8 space-y-10 font-semibold text-center mt-7">
-              <li className="flex items-center justify-between gap-6 cursor-pointer w-28">
-                <FaRegCompass size={23} color="black" />
-                <h1>Explore</h1>
-              </li>
+              {explore ? (
+                <li className="flex items-center justify-between gap-6 cursor-pointer w-28">
+                  <FaRegCompass size={23} color="black" />
+                  <h1>Explore</h1>
+                </li>
+              ) : null}
               <li>
                 <Link
                   to={"/cart"}

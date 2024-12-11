@@ -1,5 +1,5 @@
-import React from "react";
-import {  useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import data1 from "../data/AcRepair";
 import data2 from "../data/Data2";
 import data3 from "../data/Data3";
@@ -23,9 +23,11 @@ export default function SubService() {
 
   console.log(data, "this is");
 
+  const [showmenu, setshowmenu] = useState(false);
+
   return (
     <div>
-      <Navbar />
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={false} />
 
       <div className="px-16 mt-10">
         <h1 className="text-2xl font-semibold ">{service.state.service}</h1>

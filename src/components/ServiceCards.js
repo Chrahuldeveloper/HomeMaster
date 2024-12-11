@@ -28,7 +28,7 @@ export default function ServiceCards({ tittle, data }) {
                       <img
                         src={i.img}
                         alt=""
-                        className="object-cover w-full h-40 duration-500 ease-in-out rounded-lg cursor-pointer hover:brightness-75"
+                        className="object-cover w-full h-40 duration-500 ease-in-out rounded-lg cursor-pointer hover:brightness-75 hover:scale-105"
                       />
                       <h1 className="text-lg font-semibold">{i.tittle}</h1>
                       <p className="text-gray-700">Rs {i.price}</p>

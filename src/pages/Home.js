@@ -1,10 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Footer, Navbar, ServiceCards } from "../components/index";
 import data1 from "../data/AcRepair";
 import data2 from "../data/Data2";
 import data3 from "../data/Data3";
 import data4 from "../data/Data4";
 import data5 from "../data/Data5";
+import img1 from "../images/img1.png";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const data = [
@@ -46,40 +48,12 @@ export default function Home() {
     },
   ];
 
-  const [showservice, setshowservice] = useState();
-
-  const paintingref = useRef();
-  const Acref = useRef();
-  const homecleaning = useRef();
-  const pestcontrolref = useRef();
-  const electricalref = useRef();
-
-  const refs = {
-    Painting: paintingref,
-    "AC And Appliance Services": Acref,
-    "Home Cleaning": homecleaning,
-    "Pest Control": pestcontrolref,
-    "Electrical & Plumbing": electricalref,
-  };
-
   const [showmenu, setshowmenu] = useState(false);
-
-  const scrolltoexplore = () => {
-    paintingref.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-    setshowmenu(false);
-  };
 
   return (
     <div>
-      <Navbar
-        scrolltoexplore={scrolltoexplore}
-        showmenu={showmenu}
-        setshowmenu={setshowmenu}
-      />
-      <div className="flex flex-col gap-5 p-5 mt-12 justify-evenly lg:flex-row md:gap-0">
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} />
+      <div className="flex flex-col gap-5 p-5 mt-8 justify-evenly lg:flex-row md:gap-0">
         <div className="space-y-6">
           <h1 className="max-w-xs text-3xl font-semibold">
             Home services at your doorstep
@@ -88,32 +62,30 @@ export default function Home() {
             <h1 className="text-[#545454] text-xl font-semibold">
               What are you looking for?
             </h1>
-            <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-3 border-[1px] p-6 border-gray-300 gap-5 max-w-md">
+            <div className="grid max-w-md grid-cols-2 gap-5 p-6 border-gray-200 md:grid-cols-1 lg:grid-cols-3">
               {data.map((i, id) => {
                 return (
-                  <React.Fragment key={id}>
-                    <div className="flex flex-col items-center gap-3 ">
-                      <div
-                        className="cursor-pointer "
-                        onClick={() => {
-                          setshowservice(i.tittle);
-                          refs[i.tittle]?.current?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
-                        }}
-                      >
-                        <img
-                          src={i.image}
-                          className="object-cover mx-auto duration-500 ease-in-out rounded-lg w-28 hover:brightness-75"
-                          alt=""
-                        />
+                  <Link
+                    to="/subservice"
+                    state={{
+                      service: i.tittle,
+                    }}
+                  >
+                    <React.Fragment key={id}>
+                      <div className="flex flex-col items-center gap-3 ">
+                        <div className="cursor-pointer " onClick={() => {}}>
+                          <img
+                            src={i.image}
+                            className="object-cover mx-auto duration-500 ease-in-out rounded-lg w-28 hover:brightness-75"
+                            alt=""
+                          />
+                        </div>
+                        <h1 className="text-xs text-center text-[#545454]">
+                          {i.tittle}
+                        </h1>
                       </div>
-                      <h1 className="text-xs text-center text-[#545454]">
-                        {i.tittle}
-                      </h1>
-                    </div>
-                  </React.Fragment>
+                    </React.Fragment>
+                  </Link>
                 );
               })}
             </div>
@@ -122,8 +94,8 @@ export default function Home() {
 
         <div>
           <img
-            className="max-w-xs mx-auto md:max-w-xl"
-            src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1696852847761-574450.jpeg"
+            className="max-w-xs mx-auto rounded-lg md:max-w-md"
+            src={img1}
             alt=""
           />
         </div>
@@ -175,23 +147,11 @@ export default function Home() {
           );
         })}
       </div>
-
-      <div ref={paintingref}>
-        <ServiceCards tittle={"Painting"} data={data2} />
-      </div>
-      <div ref={Acref}>
-        <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
-      </div>
-      <div ref={homecleaning}>
-        <ServiceCards tittle={"Home Cleaning"} data={data4} />
-      </div>
-      <div ref={pestcontrolref}>
-        <ServiceCards tittle={"Pest Control"} data={data3} />
-      </div>
-      <div ref={electricalref}>
-        <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
-      </div>
-
+      <ServiceCards tittle={"Painting"} data={data2} />
+      <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
+      <ServiceCards tittle={"Home Cleaning"} data={data4} />
+      <ServiceCards tittle={"Pest Control"} data={data3} />
+      <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
       <Footer />
     </div>
   );

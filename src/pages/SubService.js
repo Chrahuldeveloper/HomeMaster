@@ -1,0 +1,53 @@
+import React from "react";
+import {  useLocation } from "react-router-dom";
+import data1 from "../data/AcRepair";
+import data2 from "../data/Data2";
+import data3 from "../data/Data3";
+import data4 from "../data/Data4";
+import data5 from "../data/Data5";
+import { Footer, Navbar, ServiceCards } from "../components";
+
+export default function SubService() {
+  const service = useLocation();
+  const selectedService = service.state?.service || "";
+
+  const serviceDataMap = {
+    Painting: data2,
+    "AC And Appliance Services": data1,
+    "Home Cleaning": data4,
+    "Pest Control": data3,
+    "Electrical & Plumbing": data5,
+  };
+
+  const data = serviceDataMap[selectedService] || [];
+
+  console.log(data, "this is");
+
+  return (
+    <div>
+      <Navbar />
+
+      <div className="px-16 mt-10">
+        <h1 className="text-2xl font-semibold ">{service.state.service}</h1>
+      </div>
+
+      <div className="grid justify-center grid-cols-1 gap-10 lg:gap-0 sm:grid-cols-2 md:grid-cols-3 place-items-center lg:px-14">
+        {service.state.service === "Painting" ? (
+          <ServiceCards data={data2} />
+        ) : service.state.service === "AC And Appliance Services" ? (
+          <ServiceCards data={data1} />
+        ) : service.state.service === "Home Cleaning" ? (
+          <ServiceCards data={data4} />
+        ) : service.state.service === "Pest Control" ? (
+          <ServiceCards data={data3} />
+        ) : service.state.service === "Electrical & Plumbing" ? (
+          <ServiceCards data={data5} />
+        ) : null}
+      </div>
+
+      <div className="mt-10">
+        <Footer />
+      </div>
+    </div>
+  );
+}

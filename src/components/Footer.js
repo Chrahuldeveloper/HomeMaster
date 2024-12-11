@@ -7,7 +7,7 @@ import logo from "../../src/images/logo.png";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#f5f5f5] md:h-[50vh] p-10">
+      <footer className="bg-[#f5f5f5] md:h-[50vh] p-10 ">
         <div className="pr-4 lg:px-44">
           <img
             src={logo}

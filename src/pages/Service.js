@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Service() {
   const servicedata = useLocation();
 
-  console.log(servicedata);
+  console.log(servicedata, "this is data");
 
   const filteredServices = servicedata.state.otherService?.filter(
     (service) => service.tittle !== servicedata.state.tittle
@@ -15,6 +15,8 @@ export default function Service() {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
+  console.log(filteredServices);
 
   return (
     <div>
@@ -32,7 +34,7 @@ export default function Service() {
                   <Link
                     to={`/service/${i.tittle}`}
                     state={{
-                      otherService: servicedata.state.otherService,
+                      otherService: servicedata?.state?.otherService,
                       introduction: i.Introduction,
                       prodcedure: i.Procedure,
                       price: i.price,
@@ -79,7 +81,7 @@ export default function Service() {
           <div className="space-y-5">
             <h1 className="text-2xl font-semibold">Procedure:</h1>
             <ul className="px-5 space-y-2 text-gray-600">
-              {servicedata.state.prodcedure.map((i, id) => (
+              {servicedata.state.prodcedure?.map((i, id) => (
                 <li className="list-disc" key={id}>
                   {i}
                 </li>
@@ -92,7 +94,7 @@ export default function Service() {
           <div className="space-y-5">
             <h1 className="text-2xl font-semibold">Inclusions & Exclusions:</h1>
             <ul className="px-5 space-y-2 text-gray-600">
-              {servicedata.state.inclusionsexclusions.map((i, id) => (
+              {servicedata.state?.inclusionsexclusions.map((i, id) => (
                 <li className="list-disc" key={id}>
                   {i}
                 </li>

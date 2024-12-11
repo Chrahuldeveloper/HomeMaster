@@ -11,7 +11,7 @@ import { CiPhone } from "react-icons/ci";
 import { FcAbout } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
+export default function Navbar({ showmenu, setshowmenu }) {
   const [istoggle, setistoggle] = useState(false);
 
   return (
@@ -20,14 +20,12 @@ export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
         <div className="flex items-center justify-between gap-5 px-6 md:justify-around">
           <div className="flex items-center gap-8">
             <div>
-              <img src={logo} alt="" className="w-16 h-16 " />
+              <img src={logo} alt="" className="w-20 h-20 " />
             </div>
             <ul className="text-[#545454] text-sm  md:flex items-center gap-6 hidden ">
               <li className="cursor-pointer ">About</li>
               <li className="cursor-pointer ">Contact</li>
-              <li className="cursor-pointer " onClick={scrolltoexplore}>
-                Explore
-              </li>
+              <li className="cursor-pointer ">Explore</li>
             </ul>
             <div className="flex items-center gap-2">
               <IoLocationOutline size={23} color="gray" />
@@ -65,8 +63,8 @@ export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
       </nav>
       {showmenu ? (
         <aside className="fixed inset-0 z-50 h-full bg-black bg-opacity-75 backdrop-blur-md">
-          <div className="text-[#545454] text-sm w-[75vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
-            <div className="flex justify-end px-5 mt-3">
+          <div className="text-[#545454] text-sm w-[68vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
+            <div className="flex justify-end mt-5 px-7">
               <RxCross2
                 size={33}
                 color="black"
@@ -77,35 +75,37 @@ export default function Navbar({ scrolltoexplore, showmenu, setshowmenu }) {
                 }}
               />
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col pl-8">
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
-            <ul className="px-5 mt-5 space-y-10 font-semibold text-center">
-              <li
-                onClick={scrolltoexplore}
-                className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28"
-              >
+            <ul className="pl-8 space-y-10 font-semibold text-center mt-7">
+              <li className="flex items-center justify-between gap-6 cursor-pointer w-28">
                 <FaRegCompass size={23} color="black" />
                 <h1>Explore</h1>
               </li>
               <li>
                 <Link
                   to={"/cart"}
-                  className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28"
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
                 >
                   <MdOutlineShoppingCart size={23} color="black" />
                   <h1>Your Cart</h1>
                 </Link>
               </li>
-              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
+              <li
+                onClick={() => {
+                  setistoggle(true);
+                }}
+                className="flex items-center justify-between gap-6 cursor-pointer w-28"
+              >
                 <CgProfile size={23} color="black" />
                 <h1>Profile</h1>
               </li>
-              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
+              <li className="flex items-center justify-between gap-6 rsor-pointer mx w-28">
                 <FcAbout size={25} color="black" />
                 <h1>About</h1>
               </li>
-              <li className="flex items-center justify-between gap-6 mx-auto cursor-pointer w-28">
+              <li className="flex items-center justify-between gap-6 cursor-pointer w-28">
                 <CiPhone size={23} color="black" />
                 <h1>Contact</h1>
               </li>

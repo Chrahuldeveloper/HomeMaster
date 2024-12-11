@@ -5,12 +5,12 @@ import { RxCross2 } from "react-icons/rx";
 export default function ModelLogin({ setistoggle }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
-      <div className="bg-white w-[85vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
-        <div className="-translate-y-16 flex justify-end translate-x-4">
+      <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+        <div className="flex justify-end translate-x-4 -translate-y-16">
           <RxCross2
             size={18}
             color="black"
-            className="bg-white p-1 w-8 h-8 rounded-full"
+            className="w-8 h-8 p-1 bg-white rounded-full"
             cursor={"pointer"}
             onClick={() => {
               setistoggle(false);
@@ -25,7 +25,7 @@ export default function ModelLogin({ setistoggle }) {
               <FaGoogle size={19} color="black" />
               <h1>Google</h1>
             </button>
-            <h1 className="mt-3 text-gray-700 font-semibold cursor-pointer text-sm">
+            <h1 className="mt-3 text-sm font-semibold text-gray-700 cursor-pointer">
               Terms & Conditions
             </h1>
           </div>

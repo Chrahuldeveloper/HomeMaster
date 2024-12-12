@@ -4,8 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 export default function Service() {
   const servicedata = useLocation();
 
-  console.log(servicedata, "this is data");
-
   const filteredServices = servicedata.state.otherService?.filter(
     (service) => service.tittle !== servicedata.state.tittle
   );
@@ -15,8 +13,6 @@ export default function Service() {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
-
-  console.log(filteredServices);
 
   return (
     <div>
@@ -121,7 +117,7 @@ export default function Service() {
                 <h1>{servicedata.state.tittle}</h1>
                 <p className="text-gray-700">Rs: {servicedata.state.price}</p>
               </div>
-              <button className="border-violet-500 border-[1px] rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4">
+              <button className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4">
                 Add To Cart
               </button>
             </div>

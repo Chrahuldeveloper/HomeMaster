@@ -10,12 +10,17 @@ import { FaRegCompass } from "react-icons/fa";
 import { CiPhone } from "react-icons/ci";
 import { FcAbout } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Navbar({ showmenu, setshowmenu, explore }) {
+  const notify = () => toast.success("Login Successfully!");
+
   const [istoggle, setistoggle] = useState(false);
 
   return (
     <>
+      <ToastContainer />
       <nav className="border-b-[1px] border-gray-300 p-4">
         <div className="flex items-center justify-between gap-5 px-6 md:justify-around">
           <div className="flex items-center gap-8">
@@ -122,7 +127,9 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
           </div>
         </aside>
       ) : null}
-      {istoggle ? <ModelLogin setistoggle={setistoggle} /> : null}
+      {istoggle ? (
+        <ModelLogin setistoggle={setistoggle} notify={notify} />
+      ) : null}
     </>
   );
 }

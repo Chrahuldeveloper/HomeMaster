@@ -1,8 +1,10 @@
 import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   return (
     <div className="">
       <div className="px-8 mt-4 lg:px-96">
@@ -99,9 +101,17 @@ export default function Cart() {
             <path d="M72 30h-6l12-12v6a6 6 0 01-6 6z" fill="#6E42E5"></path>
           </svg>
         </div>
-        <div className="space-y-3">
+        <div className="flex flex-col items-center justify-center space-y-3">
           <h1 className="text-lg font-semibold">Your cart is empty</h1>
           <p className="text-sm text-gray-600">Lets add some services</p>
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+            className="border-violet-500 border-[1px] rounded-lg text-violet-500 font-semibold text-sm  mx-auto py-2 mt-4 w-48"
+          >
+            Add
+          </button>
         </div>
       </div>
     </div>

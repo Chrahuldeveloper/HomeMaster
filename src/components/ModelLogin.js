@@ -1,8 +1,24 @@
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import { auth } from "../Firebase";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+// import useAuth from "../hooks/CheckUser";
 
-export default function ModelLogin({ setistoggle }) {
+export default function ModelLogin({ setistoggle, notify }) {
+  const provider = new GoogleAuthProvider();
+
+  // const { user, loading } = useAuth();
+
+  const GoogleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      notify();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
       <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
@@ -21,7 +37,10 @@ export default function ModelLogin({ setistoggle }) {
           <h1 className="text-xl font-semibold">Login/Sign up</h1>
           <div className="border-b-[1px] w-full border-gray-300 mt-4"></div>
           <div className="my-5">
-            <button className="bg-[#ededed] text-black font-semibold text-center w-full py-3 rounded-md flex items-center justify-center gap-3">
+            <button
+              onClick={GoogleSignIn}
+              className="bg-[#ededed] text-black font-semibold text-center w-full py-3 rounded-md flex items-center justify-center gap-3"
+            >
               <FaGoogle size={19} color="black" />
               <h1>Google</h1>
             </button>

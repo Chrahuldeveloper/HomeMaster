@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Footer, Navbar } from "../components";
 import { Link, useLocation } from "react-router-dom";
+import ProductCart from "../utils/Cart";
+import useAuth from "../hooks/CheckUser";
 export default function Service() {
   const servicedata = useLocation();
+
+  const cart = new ProductCart();
+
+  const { user, loading } = useAuth();
 
   const filteredServices = servicedata.state.otherService?.filter(
     (service) => service.tittle !== servicedata.state.tittle
@@ -117,7 +123,16 @@ export default function Service() {
                 <h1>{servicedata.state.tittle}</h1>
                 <p className="text-gray-700">Rs: {servicedata.state.price}</p>
               </div>
-              <button className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4">
+              <button
+                onClick={() => {
+                  cart.addToCart(user.uid,{
+                    Name : servicedata.state.tittle,
+                    Price : servicedata.state.price,
+                     
+                  });
+                }}
+                className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4"
+              >
                 Add To Cart
               </button>
             </div>

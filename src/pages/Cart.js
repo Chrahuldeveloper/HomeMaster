@@ -1,9 +1,12 @@
 import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
-
 export default function Cart() {
+  
   const navigate = useNavigate();
+
+  
+
 
   return (
     <div className="">

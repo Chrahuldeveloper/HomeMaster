@@ -42,8 +42,8 @@ export default function Cart() {
         </Link>
       </div>
       {Products ? (
-        <div className="lg:w-[30vw] mx-auto p-6 lg:p-0">
-          <div className="flex flex-col items-center justify-center -mt-3">
+        <div className="lg:w-[30vw] mx-auto my-6 p-6 lg:p-0">
+          <div className="flex flex-col items-center justify-center -mt-7">
             <div>
               <img
                 className="max-w-md"

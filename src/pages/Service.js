@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Footer, Navbar } from "../components";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import ProductCart from "../utils/Cart";
 import useAuth from "../hooks/CheckUser";
 export default function Service() {
@@ -13,6 +13,9 @@ export default function Service() {
   const { user, loading } = useAuth();
 
   console.log(loading);
+
+
+  const navigate = useNavigate()
 
   const filteredServices = servicedata.state.otherService?.filter(
     (service) => service.tittle !== servicedata.state.tittle
@@ -135,6 +138,7 @@ export default function Service() {
                     img: servicedata.state.banner,
                     serviceType: id,
                   });
+                  navigate("/cart")
                 }}
                 className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4"
               >

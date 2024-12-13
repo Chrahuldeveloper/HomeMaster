@@ -78,12 +78,21 @@ export default function Cart() {
                     <div className="border-[0.1px] border-dashed border-gray-200 w-full"></div>
 
                     <div className="flex items-center w-full gap-3">
-                      <button className="border-violet-500   border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4">
+                      <button className="border-black   border-[1px] text-sm rounded-lg text-black font-semibold w-full mx-auto py-2 mt-4">
                         Add Service
                       </button>
-                      <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full  mx-auto py-2.5 mt-4 text-center cursor-pointer  ">
-                        CheckOut
-                      </button>
+                      <Link
+                        to={"/checkout"}
+                        state={{
+                          Price: i.Price,
+                          Name: i.Name,
+                        }}
+                        className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full  mx-auto py-2.5 mt-4 text-center cursor-pointer  "
+                      >
+                        <button >
+                          CheckOut
+                        </button>
+                      </Link>
                     </div>
                   </>
                 </React.Fragment>

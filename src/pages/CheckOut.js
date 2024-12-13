@@ -3,6 +3,7 @@ import { Footer, Navbar } from "../components";
 import { RxCross2 } from "react-icons/rx";
 import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
+import { useLocation } from "react-router-dom";
 
 export default function CheckOut() {
   const [selectedPayment, setSelectedPayment] = useState(null);
@@ -12,6 +13,10 @@ export default function CheckOut() {
   };
 
   const [toggle, settoggle] = useState(false);
+
+  const data = useLocation();
+
+  console.log(data);
 
   return (
     <>
@@ -68,18 +73,18 @@ export default function CheckOut() {
           <h1 className="mt-5 font-bold">Payment summary</h1>
 
           <div className="flex justify-between mt-5">
-            <h1>Item total</h1>
-            <p>₹549</p>
+            <h1>Item Price</h1>
+            <p>{data.state.Price}</p>
           </div>
           <div className="flex justify-between mt-5">
-            <h1>Item total</h1>
+            <h1>Item Tax</h1>
             <p>₹69</p>
           </div>
 
           <div className="flex justify-between mt-8">
             <h1 className="font-semibold">Total</h1>
-            <p>₹618 </p>
-          </div>
+            <p>{Number(data.state.Price) + 69}</p>
+            </div>
           <div>
             <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
               Pay

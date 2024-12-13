@@ -15,9 +15,12 @@ import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../hooks/CheckUser";
 import ProductCart from "../utils/Cart";
 import Loader from "./Loader";
+import { signOut } from "firebase/auth";
+import { auth } from "../Firebase";
 
 export default function Navbar({ showmenu, setshowmenu, explore, page }) {
   const notify = () => toast.success("Login Successfully!");
+  const notify1 = () => toast.success("Logout Successfully!");
   const products = useMemo(() => new ProductCart(), []);
 
   const { user, loading } = useAuth();
@@ -49,6 +52,15 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
   const [logouttoggle, setlogouttoggle] = useState(false);
 
   console.log(loading);
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      notify1();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -256,7 +268,10 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
               <h1 className="text-xl font-semibold">Logout Account</h1>
               <div className="border-b-[1px] w-full border-gray-300 mt-4"></div>
               <div className="my-5">
-                <button className="flex items-center justify-center w-full gap-3 py-3 font-semibold text-center text-white rounded-md bg-[#6e42e5]">
+                <button
+                  onClick={logout}
+                  className="flex items-center justify-center w-full gap-3 py-3 font-semibold text-center text-white rounded-md bg-[#6e42e5]"
+                >
                   Logout
                 </button>
               </div>

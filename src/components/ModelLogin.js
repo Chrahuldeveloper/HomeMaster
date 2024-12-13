@@ -5,7 +5,7 @@ import { auth } from "../Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // import useAuth from "../hooks/CheckUser";
 
-export default function ModelLogin({ setistoggle, notify }) {
+export default function ModelLogin({ setlogintoggle, notify }) {
   const provider = new GoogleAuthProvider();
 
   // const { user, loading } = useAuth();
@@ -29,7 +29,7 @@ export default function ModelLogin({ setistoggle, notify }) {
             className="w-8 h-8 p-1 bg-white rounded-full"
             cursor={"pointer"}
             onClick={() => {
-              setistoggle(false);
+              setlogintoggle(false);
             }}
           />
         </div>

@@ -12,11 +12,20 @@ import { FcAbout } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useAuth from "../hooks/CheckUser";
 
 export default function Navbar({ showmenu, setshowmenu, explore }) {
   const notify = () => toast.success("Login Successfully!");
 
   const [istoggle, setistoggle] = useState(false);
+
+  const [logintoggle, setlogintoggle] = useState(false);
+
+  const { user, loading } = useAuth();
+
+  const [logouttoggle, setlogouttoggle] = useState(false);
+
+  console.log(loading);
 
   return (
     <>
@@ -37,7 +46,7 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
               <p className="text-sm text-[#545454]">Pune</p>
             </div>
           </div>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <CiMenuFries
               onClick={() => {
                 setshowmenu(true);
@@ -47,7 +56,7 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
               className="cursor-pointer"
             />
           </div>
-          <div className="items-center hidden gap-5 md:flex">
+          <div className="items-center hidden gap-5 lg:flex">
             <Link to="/cart">
               <MdOutlineShoppingCart
                 size={25}
@@ -57,7 +66,7 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
             </Link>
             <CgProfile
               onClick={() => {
-                setistoggle(true);
+                setistoggle(!istoggle);
               }}
               size={25}
               color="black"
@@ -65,6 +74,43 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
             />
           </div>
         </div>
+        {istoggle ? (
+          <div className="absolute z-10 hidden w-48 mt-2 bg-white rounded-md shadow-lg lg:block right-44 ring-1 top-20 ring-black ring-opacity-5">
+            <div className="flex justify-end p-2">
+              <RxCross2
+                size={23}
+                color="black"
+                className="bg-white rounded-full cursor-pointer "
+                cursor={"pointer"}
+                onClick={() => {
+                  setistoggle(false);
+                }}
+              />
+            </div>
+
+            {user ? (
+              <button
+                onClick={() => {
+                  setlogouttoggle(true);
+                }}
+                className="block w-full px-4 py-2 mb-5 -mt-3 text-sm font-semibold text-left text-gray-700 hover:bg-violet-100"
+              >
+                Logout
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setlogintoggle(true);
+                }}
+                className="block w-full px-4 py-2 mb-5 -mt-3 text-sm font-semibold text-left text-gray-700 hover:bg-violet-100"
+              >
+                Login
+              </button>
+            )}
+          </div>
+        ) : (
+          ""
+        )}
       </nav>
       {showmenu ? (
         <aside className="fixed inset-0 z-50 h-full bg-black bg-opacity-75 backdrop-blur-md">
@@ -99,15 +145,27 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
                   <h1>Your Cart</h1>
                 </Link>
               </li>
-              <li
-                onClick={() => {
-                  setistoggle(true);
-                }}
-                className="flex items-center justify-between gap-6 cursor-pointer w-28"
-              >
-                <CgProfile size={23} color="black" />
-                <h1>Profile</h1>
-              </li>
+              {user ? (
+                <li
+                  onClick={() => {
+                    setlogouttoggle(true);
+                  }}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <CgProfile size={23} color="black" />
+                  <h1>Logout</h1>
+                </li>
+              ) : (
+                <li
+                  onClick={() => {
+                    setlogintoggle(true);
+                  }}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <CgProfile size={23} color="black" />
+                  <h1>Login</h1>
+                </li>
+              )}
               <li className="flex items-center justify-between gap-6 rsor-pointer mx w-28">
                 <FcAbout size={25} color="black" />
                 <h1>About</h1>
@@ -127,9 +185,38 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
           </div>
         </aside>
       ) : null}
-      {istoggle ? (
-        <ModelLogin setistoggle={setistoggle} notify={notify} />
+      {logintoggle ? (
+        <ModelLogin setlogintoggle={setlogintoggle} notify={notify} />
       ) : null}
+
+      {logouttoggle ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
+          <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+            <div className="flex justify-end translate-x-4 -translate-y-16">
+              <RxCross2
+                size={18}
+                color="black"
+                className="w-8 h-8 p-1 bg-white rounded-full"
+                cursor={"pointer"}
+                onClick={() => {
+                  setlogouttoggle(false);
+                }}
+              />
+            </div>
+            <div className="-mt-6">
+              <h1 className="text-xl font-semibold">Logout Account</h1>
+              <div className="border-b-[1px] w-full border-gray-300 mt-4"></div>
+              <div className="my-5">
+                <button className="flex items-center justify-center w-full gap-3 py-3 font-semibold text-center text-white rounded-md bg-[#6e42e5]">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 }

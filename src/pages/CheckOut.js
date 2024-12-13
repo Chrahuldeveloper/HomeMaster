@@ -103,7 +103,9 @@ export default function CheckOut() {
                 }}
               />
             </div>
-            <h1 className="text-lg font-semibold -mt-7 ">Select Payment Method</h1>
+            <h1 className="text-lg font-semibold -mt-7 ">
+              Select Payment Method
+            </h1>
             <div className="border-b-[1px] border-gray-300 mt-3"></div>
             <div className="flex justify-between ">
               <div

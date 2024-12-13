@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Footer, Navbar } from "../components";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import ProductCart from "../utils/Cart";
 import useAuth from "../hooks/CheckUser";
 export default function Service() {
@@ -8,7 +8,11 @@ export default function Service() {
 
   const cart = new ProductCart();
 
+  const { id } = useParams();
+
   const { user, loading } = useAuth();
+
+  console.log(loading);
 
   const filteredServices = servicedata.state.otherService?.filter(
     (service) => service.tittle !== servicedata.state.tittle
@@ -125,10 +129,11 @@ export default function Service() {
               </div>
               <button
                 onClick={() => {
-                  cart.addToCart(user.uid,{
-                    Name : servicedata.state.tittle,
-                    Price : servicedata.state.price,
-                     
+                  cart.addToCart(user.uid, {
+                    Name: servicedata.state.tittle,
+                    Price: servicedata.state.price,
+                    img: servicedata.state.banner,
+                    serviceType: id,
                   });
                 }}
                 className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4"

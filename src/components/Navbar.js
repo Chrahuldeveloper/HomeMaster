@@ -199,6 +199,25 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
                   <h1>Your Cart</h1>
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  to="/about"
+                  className="flex items-center justify-between gap-6 rsor-pointer mx w-28"
+                >
+                  <FcAbout size={25} color="black" />
+                  <h1>About</h1>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/contact"}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <CiPhone size={23} color="black" />
+                  <h1>Contact</h1>
+                </Link>
+              </li>
               {user ? (
                 <li
                   onClick={() => {
@@ -220,24 +239,6 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
                   <h1>Login</h1>
                 </li>
               )}
-              <li>
-                <Link
-                  to="/about"
-                  className="flex items-center justify-between gap-6 rsor-pointer mx w-28"
-                >
-                  <FcAbout size={25} color="black" />
-                  <h1>About</h1>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"/contact"}
-                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
-                >
-                  <CiPhone size={23} color="black" />
-                  <h1>Contact</h1>
-                </Link>
-              </li>
             </ul>
             <footer className="flex items-center justify-center">
               <div className="fixed bottom-4">

@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={true}/>
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={true} />
       <div className="flex flex-col gap-5 p-5 mt-8 justify-evenly lg:flex-row md:gap-0">
         <div className="space-y-6">
           <h1 className="max-w-xs text-3xl font-semibold">
@@ -109,8 +109,8 @@ export default function Home() {
             className="object-cover w-12 h-12"
           />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-semibold">5</h1>
-            <p className="text-gray-600">Service Rating</p>
+            <h1 className="text-xl font-semibold">5</h1>
+            <p className="text-sm text-gray-600">Service Rating</p>
           </div>
         </div>
 
@@ -121,8 +121,8 @@ export default function Home() {
             className="object-cover w-12 h-12"
           />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-semibold">12M+</h1>
-            <p className="text-gray-600">Customers Globally</p>
+            <h1 className="text-xl font-semibold">12M+</h1>
+            <p className="text-sm text-gray-600">Customers Globally</p>
           </div>
         </div>
       </div>

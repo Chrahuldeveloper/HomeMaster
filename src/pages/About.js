@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Footer, Navbar } from "../components";
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { AiOutlineAim } from "react-icons/ai";
 
 export default function About() {
+  const [showmenu, setshowmenu] = useState(false);
+
   return (
     <>
       <div>
-        <Navbar explore={false} page={"About"} />
+        <Navbar
+          showmenu={showmenu}
+          setshowmenu={setshowmenu}
+          explore={false}
+          page={"About"}
+        />
         <div className="flex flex-col gap-6 p-5 my-10 md:flex-row md:justify-evenly md:gap-0">
           <div>
             <img
               src="https://homemaster.in/upload/about/about-page-img-1.jpg"
               alt=""
-              className="max-w-xl rounded-lg cursor-pointer"
+              className="max-w-sm mx-auto rounded-lg cursor-pointer md:max-w-md lg:max-w-lg"
             />
           </div>
           <div className="max-w-lg space-y-3">

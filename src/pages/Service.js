@@ -3,7 +3,12 @@ import { Footer, Navbar } from "../components";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import ProductCart from "../utils/Cart";
 import useAuth from "../hooks/CheckUser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function Service() {
+  const notify = () => toast.success("Please Login!");
+
   const servicedata = useLocation();
 
   const cart = new ProductCart();
@@ -28,6 +33,8 @@ export default function Service() {
 
   return (
     <div>
+      <ToastContainer />
+
       <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={false} />
 
       <div className="w-[90vw] sm:w-[80vw] md:w-[97vw] lg:w-[84vw] mx-auto border-[1px] p-6 my-7">
@@ -131,13 +138,17 @@ export default function Service() {
               </div>
               <button
                 onClick={() => {
-                  cart.addToCart(user.uid, {
-                    Name: servicedata.state.tittle,
-                    Price: servicedata.state.price,
-                    img: servicedata.state.banner,
-                    serviceType: id,
-                  });
-                  navigate("/cart");
+                  if (user) {
+                    cart.addToCart(user.uid, {
+                      Name: servicedata.state.tittle,
+                      Price: servicedata.state.price,
+                      img: servicedata.state.banner,
+                      serviceType: id,
+                    });
+                    navigate("/cart");
+                  } else {
+                    notify();
+                  }
                 }}
                 className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4"
               >

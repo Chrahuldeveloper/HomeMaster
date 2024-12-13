@@ -19,6 +19,8 @@ export default function CheckOut() {
 
   const [phone, setphone] = useState();
 
+  const [toggleaddress, settoggleaddress] = useState(false);
+
   const [tooglephone, settooglephone] = useState(false);
 
   console.log(data);
@@ -54,7 +56,12 @@ export default function CheckOut() {
             />
             <div className="space-y-2">
               <h1 className="">Address</h1>
-              <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer">
+              <button
+                onClick={() => {
+                  settoggleaddress(true);
+                }}
+                className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
+              >
                 +Add
               </button>
             </div>
@@ -160,27 +167,33 @@ export default function CheckOut() {
         ""
       )}
 
-      <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
-        <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
-          <div className="flex justify-end translate-x-4 -translate-y-16">
-            <RxCross2
-              size={18}
-              color="black"
-              className="w-8 h-8 p-1 bg-white rounded-full"
-              cursor={"pointer"}
-            />
+      {toggleaddress ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
+          <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+            <div className="flex justify-end translate-x-4 -translate-y-16">
+              <RxCross2
+                size={18}
+                color="black"
+                className="w-8 h-8 p-1 bg-white rounded-full"
+                cursor={"pointer"}
+                onClick={() => {
+                  settoggleaddress(false);
+                }}
+              />
+            </div>
+            <h1 className="text-lg font-semibold -mt-7 ">Enter Your Address</h1>
+            <div>
+              <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4 flex items-center gap-3  justify-center">
+                <MdMyLocation size={24} color={"white"} />
+                <h1>Use Location</h1>
+              </button>
+            </div>
+            <p className="mt-3 text-xs font-semibold text-center text-gray-500">
+              Powered By HomeMaster
+            </p>
           </div>
-          <h1 className="text-lg font-semibold -mt-7 ">Enter Your Address</h1>
-          <div>
-            <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4 flex items-center gap-3  justify-center">
-              <MdMyLocation size={24} color={"white"} />
-              <h1>Use Location</h1>
-            </button>
-          </div>
-          <p className="mt-3 text-xs font-semibold text-center text-gray-500">Powered By HomeMaster</p>
         </div>
-      </div>
-      
+      ) : null}
 
       {tooglephone ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
@@ -203,6 +216,10 @@ export default function CheckOut() {
               <input
                 type="text"
                 placeholder="Phone Number"
+                value={phone}
+                onChange={(e) => {
+                  setphone(e.target.value);
+                }}
                 className="outline-none border-[1px] px-3 py-2 w-full border-gray-300 rounded-lg mt-3"
               />
             </div>

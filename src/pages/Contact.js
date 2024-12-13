@@ -5,7 +5,9 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <div></div>
+      <div>
+        
+      </div>
       <Footer />
     </>
   );

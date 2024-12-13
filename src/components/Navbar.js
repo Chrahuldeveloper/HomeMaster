@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { IoLocationOutline } from "react-icons/io5";
 import ModelLogin from "./ModelLogin";
@@ -13,15 +13,38 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../hooks/CheckUser";
+import ProductCart from "../utils/Cart";
+import Loader from "./Loader";
 
 export default function Navbar({ showmenu, setshowmenu, explore, page }) {
   const notify = () => toast.success("Login Successfully!");
+  const products = useMemo(() => new ProductCart(), []);
+
+  const { user, loading } = useAuth();
+
+  const [Loading, setLoading] = useState(false);
+
+  const [count, setcount] = useState();
+
+  useEffect(() => {
+    if (!user?.uid) return;
+    const fetchCartProducts = async () => {
+      try {
+        setLoading(true);
+        const data = await products.fetchProducts(user.uid);
+        console.log(data);
+        setcount(data.length);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchCartProducts();
+  }, [products, user?.uid]);
 
   const [istoggle, setistoggle] = useState(false);
 
   const [logintoggle, setlogintoggle] = useState(false);
-
-  const { user, loading } = useAuth();
 
   const [logouttoggle, setlogouttoggle] = useState(false);
 
@@ -30,6 +53,7 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
   return (
     <>
       <ToastContainer />
+      {Loading ? <Loader /> : null}
       <nav className="border-b-[1px] border-gray-300 p-4">
         <div className="flex items-center justify-between gap-5 px-6 md:justify-around">
           <div className="flex items-center gap-8">
@@ -70,6 +94,9 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
           </div>
           <div className="items-center hidden gap-5 lg:flex">
             <Link to="/cart">
+              <div className="absolute flex items-center justify-center w-4 h-4 p-3 text-center text-white translate-x-3 bg-red-500 rounded-full top-7">
+                <h1 className="text-[11px]">{count}</h1>
+              </div>
               <MdOutlineShoppingCart
                 size={25}
                 color="black"

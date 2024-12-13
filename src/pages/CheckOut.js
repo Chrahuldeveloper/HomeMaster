@@ -87,7 +87,7 @@ export default function CheckOut() {
         </div>
 
         <div className="border-[1px] border-gray-300 md:w-[60vw] lg:w-[30vw] p-6 rounded-lg shadow-sm">
-          <h1 className="mt-5 font-bold">Payment summary</h1>
+          <h1 className="mt-5 text-lg font-bold">Payment summary</h1>
 
           <div className="flex justify-between mt-5">
             <h1>Item Price</h1>

@@ -11,6 +11,7 @@ export default function ModelLogin({ setlogintoggle, notify }) {
     try {
       await signInWithPopup(auth, provider);
       notify();
+      setlogintoggle(false);
     } catch (error) {
       console.log(error);
     }
@@ -41,9 +42,6 @@ export default function ModelLogin({ setlogintoggle, notify }) {
               <FaGoogle size={19} color="black" />
               <h1>Google</h1>
             </button>
-            <h1 className="mt-3 text-sm font-semibold text-gray-700 cursor-pointer">
-              Terms & Conditions
-            </h1>
           </div>
         </div>
       </div>

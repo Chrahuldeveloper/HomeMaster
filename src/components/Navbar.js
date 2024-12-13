@@ -57,6 +57,7 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
     try {
       await signOut(auth);
       notify1();
+      setlogouttoggle(false);
     } catch (error) {
       console.log(error);
     }
@@ -106,9 +107,11 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
           </div>
           <div className="items-center hidden gap-5 lg:flex">
             <Link to="/cart">
-              <div className="absolute flex items-center justify-center w-4 h-4 p-3 text-center text-white translate-x-3 bg-red-500 rounded-full top-7">
-                <h1 className="text-[11px]">{count}</h1>
-              </div>
+              {count && user ? (
+                <div className="absolute flex items-center justify-center w-4 h-4 p-3 text-center text-white translate-x-3 bg-red-500 rounded-full top-7">
+                  <h1 className="text-[11px]">{count}</h1>
+                </div>
+              ) : null}
               <MdOutlineShoppingCart
                 size={25}
                 color="black"

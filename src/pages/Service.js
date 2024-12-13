@@ -14,8 +14,7 @@ export default function Service() {
 
   console.log(loading);
 
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const filteredServices = servicedata.state.otherService?.filter(
     (service) => service.tittle !== servicedata.state.tittle
@@ -138,7 +137,7 @@ export default function Service() {
                     img: servicedata.state.banner,
                     serviceType: id,
                   });
-                  navigate("/cart")
+                  navigate("/cart");
                 }}
                 className="border-violet-500 border-[1px] text-sm rounded-lg text-violet-500 font-semibold w-full mx-auto py-2 mt-4"
               >

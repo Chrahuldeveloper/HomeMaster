@@ -14,7 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../hooks/CheckUser";
 
-export default function Navbar({ showmenu, setshowmenu, explore }) {
+export default function Navbar({ showmenu, setshowmenu, explore, page }) {
   const notify = () => toast.success("Login Successfully!");
 
   const [istoggle, setistoggle] = useState(false);
@@ -37,8 +37,20 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
               <img src={logo} alt="" className="w-20 h-20 " />
             </div>
             <ul className="text-[#545454] text-sm  md:flex items-center gap-6 hidden ">
-              <li className="cursor-pointer ">About</li>
-              <li className="cursor-pointer ">Contact</li>
+              <li
+                className={`cursor-pointer  ${
+                  page === "About" ? "text-violet-500  font-semibold" : null
+                } `}
+              >
+                <Link to={"/about"}>About</Link>
+              </li>
+              <li
+                className={`cursor-pointer  ${
+                  page === "contact" ? "text-violet-500  font-semibold" : null
+                } `}
+              >
+                <Link to={"/contact"}>Contact</Link>
+              </li>
               {explore ? <li className="cursor-pointer ">Explore</li> : null}
             </ul>
             <div className="flex items-center gap-2">
@@ -166,13 +178,23 @@ export default function Navbar({ showmenu, setshowmenu, explore }) {
                   <h1>Login</h1>
                 </li>
               )}
-              <li className="flex items-center justify-between gap-6 rsor-pointer mx w-28">
-                <FcAbout size={25} color="black" />
-                <h1>About</h1>
+              <li>
+                <Link
+                  to="/about"
+                  className="flex items-center justify-between gap-6 rsor-pointer mx w-28"
+                >
+                  <FcAbout size={25} color="black" />
+                  <h1>About</h1>
+                </Link>
               </li>
-              <li className="flex items-center justify-between gap-6 cursor-pointer w-28">
-                <CiPhone size={23} color="black" />
-                <h1>Contact</h1>
+              <li>
+                <Link
+                  to={"/contact"}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <CiPhone size={23} color="black" />
+                  <h1>Contact</h1>
+                </Link>
               </li>
             </ul>
             <footer className="flex items-center justify-center">

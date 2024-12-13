@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <div>
-        <Navbar />
+        <Navbar explore={false} page={"About"} />
         <div className="flex flex-col gap-6 p-5 my-10 md:flex-row md:justify-evenly md:gap-0">
           <div>
             <img

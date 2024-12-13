@@ -3,12 +3,9 @@ import { FaGoogle } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { auth } from "../Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import useAuth from "../hooks/CheckUser";
 
 export default function ModelLogin({ setlogintoggle, notify }) {
   const provider = new GoogleAuthProvider();
-
-  // const { user, loading } = useAuth();
 
   const GoogleSignIn = async () => {
     try {

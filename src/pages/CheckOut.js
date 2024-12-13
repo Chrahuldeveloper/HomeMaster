@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { useLocation } from "react-router-dom";
+import { MdMyLocation } from "react-icons/md";
 
 export default function CheckOut() {
   const [selectedPayment, setSelectedPayment] = useState(null);
@@ -15,6 +16,10 @@ export default function CheckOut() {
   const [toggle, settoggle] = useState(false);
 
   const data = useLocation();
+
+  const [phone, setphone] = useState();
+
+  const [tooglephone, settooglephone] = useState(false);
 
   console.log(data);
 
@@ -31,7 +36,12 @@ export default function CheckOut() {
             />
             <div className="space-y-2">
               <h1 className="">Send booking details to</h1>
-              <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer">
+              <button
+                onClick={() => {
+                  settooglephone(true);
+                }}
+                className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
+              >
                 +Add
               </button>{" "}
             </div>
@@ -84,7 +94,7 @@ export default function CheckOut() {
           <div className="flex justify-between mt-8">
             <h1 className="font-semibold">Total</h1>
             <p>{Number(data.state.Price) + 69}</p>
-            </div>
+          </div>
           <div>
             <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
               Pay
@@ -149,6 +159,82 @@ export default function CheckOut() {
       ) : (
         ""
       )}
+
+      <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
+        <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+          <div className="flex justify-end translate-x-4 -translate-y-16">
+            <RxCross2
+              size={18}
+              color="black"
+              className="w-8 h-8 p-1 bg-white rounded-full"
+              cursor={"pointer"}
+            />
+          </div>
+          <h1 className="text-lg font-semibold -mt-7 ">Enter Your Address</h1>
+          <div>
+            <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4 flex items-center gap-3  justify-center">
+              <MdMyLocation size={24} color={"white"} />
+              <h1>Use Location</h1>
+            </button>
+          </div>
+          <p className="mt-3 text-xs font-semibold text-center text-gray-500">Powered By HomeMaster</p>
+        </div>
+      </div>
+      
+
+      {tooglephone ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
+          <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+            <div className="flex justify-end translate-x-4 -translate-y-16">
+              <RxCross2
+                size={18}
+                color="black"
+                className="w-8 h-8 p-1 bg-white rounded-full"
+                cursor={"pointer"}
+                onClick={() => {
+                  settooglephone(false);
+                }}
+              />
+            </div>
+            <h1 className="text-lg font-semibold -mt-7 ">
+              Enter Your Phone Number
+            </h1>
+            <div>
+              <input
+                type="text"
+                placeholder="Phone Number"
+                className="outline-none border-[1px] px-3 py-2 w-full border-gray-300 rounded-lg mt-3"
+              />
+            </div>
+            <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
+              Send OTP
+            </button>
+            <h1 className="mt-3.5 text-lg font-semibold ">Enter OTP</h1>
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <input
+                type="number"
+                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
+              />
+              <input
+                type="number"
+                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
+              />
+              <input
+                type="number"
+                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
+              />
+              <input
+                type="number"
+                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
+              />
+              <input
+                type="number"
+                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }

@@ -41,12 +41,12 @@ export default function Cart() {
           <FaArrowLeftLong size={25} className="cursor-pointer" />
         </Link>
       </div>
-      {Products ? (
+      {Products.length > 0 ? (
         <div className="lg:w-[30vw] mx-auto my-6 p-6 lg:p-0">
           <div className="flex flex-col items-center justify-center -mt-7">
             <div>
               <img
-                className="max-w-md"
+                className="max-w-xs mx-auto md:max-w-md"
                 src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_1232,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1683529632526-fb310a.jpeg"
                 alt=""
               />

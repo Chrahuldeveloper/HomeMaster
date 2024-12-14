@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Footer, Navbar } from "../components";
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { AiOutlineAim } from "react-icons/ai";
 
 export default function About() {
   const [showmenu, setshowmenu] = useState(false);
+
+  
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
 
   return (
     <>
@@ -20,7 +26,7 @@ export default function About() {
             <img
               src="https://homemaster.in/upload/about/about-page-img-1.jpg"
               alt=""
-              className="max-w-sm mx-auto rounded-lg cursor-pointer md:max-w-md lg:max-w-lg"
+              className="max-w-xs mx-auto rounded-lg cursor-pointer md:max-w-md lg:max-w-lg"
             />
           </div>
           <div className="max-w-lg space-y-3">

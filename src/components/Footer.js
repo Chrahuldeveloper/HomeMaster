@@ -4,10 +4,11 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import logo from "../../src/images/logo.png";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#f5f5f5] md:h-[50vh] p-10 ">
+      <footer className="bg-[#f5f5f5] md:h-[50vh] p-10 text-center">
         <div className="pr-4 lg:px-44">
           <img
             src={logo}
@@ -16,21 +17,25 @@ export default function Footer() {
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-10 my-10 mb-20 md:flex-row md:items-start md:justify-evenly">
-          <div>
+          <div className="text-center md:text-left">
             <h1 className="text-xl font-semibold">Company</h1>
             <ul className="mt-3 space-y-3">
-              <li className="text-gray-700">About us</li>
-              <li className="text-gray-700">Reach Out</li>
+              <li className="text-gray-700">
+                <Link to="/about">About us</Link>
+              </li>
+              <li className="text-gray-700">
+                <Link to="/contact">Reach Out</Link>
+              </li>
             </ul>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h1 className="text-xl font-semibold">Contact Us</h1>
             <ul className="mt-3 space-y-3">
               <li className="text-gray-700">homemaster@gmail.com</li>
               <li className="text-gray-700">9928492720</li>
             </ul>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h1 className="text-xl font-semibold">Location</h1>
             <ul className="mt-3 space-y-3">
               <li className="text-gray-700">Kothrud, Pune</li>
@@ -40,9 +45,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <h1 className="text-xl font-semibold">Social Links</h1>
-            <ul className="flex items-center mt-3 space-x-3">
+            <ul className="flex items-center justify-center mt-3 space-x-3 md:justify-start">
               <li>
                 <CiInstagram
                   size={24}

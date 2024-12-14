@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Footer, Navbar } from "../components";
 import useAuth from "../hooks/CheckUser";
 import ContactFunc from "../utils/ContactUs";
@@ -11,18 +11,32 @@ export default function Contact() {
 
   const notify = () => toast.success("We will contact you Soon!");
 
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   const [data, setdata] = useState({
     Name: "",
     email: "",
+    Service: "",
     message: "",
   });
 
   console.log(loading);
 
+  const services = [
+    "Painting",
+    "AC And Appliance Services",
+    "Home Cleaning",
+    "Pest Control",
+    "Electrical & Plumbing",
+    "Beauty & Services",
+  ];
+
   return (
     <>
       <ToastContainer />
-      <Navbar />
+      <Navbar page={"contact"}/>
       <div className="p-5">
         <div className="bg-white max-w-xl mx-auto my-10 border-[1px] rounded-lg p-5 border-gray-300 space-y-5 ">
           <div>
@@ -51,6 +65,27 @@ export default function Contact() {
               }}
               className="outline-none border-[1px] px-3 py-2 w-full  border-gray-300 bg-gray-50 rounded-lg mt-3"
             />
+          </div>
+          <div>
+            <h1>Service</h1>
+            <select
+              value={data.Service}
+              onChange={(e) => {
+                setdata({ ...data, Service: e.target.value });
+              }}
+              className="outline-none border-[1px] px-3 py-2 w-full  border-gray-300 bg-gray-50 rounded-lg mt-3 cursor-pointer"
+            >
+              <option className="text-black">Select</option>
+              {services.map((i, id) => {
+                return (
+                  <>
+                    <option value={i} key={id} className="text-black">
+                      {i}
+                    </option>
+                  </>
+                );
+              })}
+            </select>
           </div>
           <div>
             <h1>Message</h1>

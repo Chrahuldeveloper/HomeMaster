@@ -31,6 +31,10 @@ export default function Home() {
       tittle: "Electrical & Plumbing",
       image: "https://homemaster.in/upload/service/Electrical.jpg",
     },
+    {
+      tittle: "Beauty & Services",
+      image: "https://homemaster.in/upload/service/Electrical.jpg",
+    },
   ];
 
   const howWeWork = [

@@ -212,7 +212,7 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
               <li>
                 <Link
                   to={"/contact"}
-                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                className="flex items-center justify-between gap-6 cursor-pointer w-28"
                 >
                   <CiPhone size={23} color="black" />
                   <h1>Contact</h1>

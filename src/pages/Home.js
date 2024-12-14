@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Footer, Navbar, ServiceCards } from "../components/index";
+import { Footer, Gallery, Navbar, ServiceCards } from "../components/index";
 import data1 from "../data/AcRepair";
 import data2 from "../data/Data2";
 import data3 from "../data/Data3";
@@ -178,7 +178,7 @@ export default function Home() {
           <FaAngleUp size={23} color="white" />
         </div>
       </div>
-
+      <Gallery />
       <Footer />
     </div>
   );

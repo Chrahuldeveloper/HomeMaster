@@ -270,8 +270,6 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
                 </Link>
               </li>
 
-             
-             
               {user ? (
                 <li
                   onClick={() => {

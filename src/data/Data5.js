@@ -115,7 +115,7 @@ const data5 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/servicedetails/Ant_Control.jpg",
+    img: "https://homemaster.in/upload/servicedetails/Water_Tank1.jpg",
     tittle: "Water Tank",
     price: "299",
     Introduction:

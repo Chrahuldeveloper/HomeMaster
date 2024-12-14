@@ -25,6 +25,7 @@ export default function Navbar({
   setshowmenu,
   page,
   scrollToGallery,
+  hide,
 }) {
   const notify = () => toast.success("Login Successfully!");
   const notify1 = () => toast.success("Logout Successfully!");
@@ -111,14 +112,16 @@ export default function Navbar({
               >
                 <Link to={"/explore"}>Explore</Link>
               </li>
-              <li
-                className={`cursor-pointer  ${
-                  page === "gallery" ? "text-violet-500  font-semibold" : null
-                } `}
-                onClick={scrollToGallery}
-              >
-                Gallery
-              </li>
+              {hide === "gallery" ? (
+                <li
+                  className={`cursor-pointer  ${
+                    page === "gallery" ? "text-violet-500  font-semibold" : null
+                  } `}
+                  onClick={scrollToGallery}
+                >
+                  Gallery
+                </li>
+              ) : null}
             </ul>
             <div className="flex items-center gap-2">
               <IoLocationOutline size={23} color="gray" />
@@ -246,17 +249,18 @@ export default function Navbar({
                 </Link>
               </li>
 
-              <li
-                onClick={()=>{
-                  scrollToGallery()
-                  setshowmenu(false)
-                }}
-                className="flex items-center justify-between gap-6 cursor-pointer w-28"
-              >
-                <RiGalleryLine size={23} color="black" />
-                <h1>Gallery</h1>
-              </li>
-
+              {hide === "gallery" ? (
+                <li
+                  onClick={() => {
+                    scrollToGallery();
+                    setshowmenu(false);
+                  }}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <RiGalleryLine size={23} color="black" />
+                  <h1>Gallery</h1>
+                </li>
+              ) : null}
               <li>
                 <Link
                   to={"/contact"}

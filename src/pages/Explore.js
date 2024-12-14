@@ -35,7 +35,7 @@ export default function Explore() {
 
   return (
     <>
-      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} page={"explore"} />
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} page={"explore"} hide="gallery" />
       <div className="max-w-md my-20 rounded-lg md:max-w-lg mx-auto border-gray-300 border-[1px] p-5">
         <h1 className="pb-5 text-lg font-semibold ">Explore our Services</h1>
         <div className="grid grid-cols-2 gap-10 md:grid-cols-1 lg:grid-cols-3">

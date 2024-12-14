@@ -182,8 +182,6 @@ export default function Home() {
       <ServiceCards tittle={"Pest Control"} data={data3} />
       <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
 
-      
-
       <div ref={galleryref} className="mb-8 ">
         <h1 className="text-3xl font-semibold text-center">Our Work </h1>
         <Gallery />

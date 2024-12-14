@@ -20,7 +20,12 @@ import { auth } from "../Firebase";
 import { MdHome } from "react-icons/md";
 import { RiGalleryLine } from "react-icons/ri";
 
-export default function Navbar({ showmenu, setshowmenu, page }) {
+export default function Navbar({
+  showmenu,
+  setshowmenu,
+  page,
+  scrollToGallery,
+}) {
   const notify = () => toast.success("Login Successfully!");
   const notify1 = () => toast.success("Logout Successfully!");
   const products = useMemo(() => new ProductCart(), []);
@@ -110,8 +115,9 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
                 className={`cursor-pointer  ${
                   page === "gallery" ? "text-violet-500  font-semibold" : null
                 } `}
+                onClick={scrollToGallery}
               >
-                <Link to={"/gallery"}>Gallery</Link>
+                Gallery
               </li>
             </ul>
             <div className="flex items-center gap-2">
@@ -240,14 +246,12 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  to={"/gallery"}
-                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
-                >
-                  <RiGalleryLine size={23} color="black" />
-                  <h1>Gallery</h1>
-                </Link>
+              <li
+                onClick={scrollToGallery}
+                className="flex items-center justify-between gap-6 cursor-pointer w-28"
+              >
+                <RiGalleryLine size={23} color="black" />
+                <h1>Gallery</h1>
               </li>
 
               <li>

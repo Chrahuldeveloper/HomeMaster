@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Footer, Gallery, Navbar, ServiceCards } from "../components/index";
 import data1 from "../data/AcRepair";
 import data2 from "../data/Data2";
@@ -62,6 +62,16 @@ export default function Home() {
     });
   };
 
+  const galleryref = useRef(null);
+
+  const scrollToGallery = () => {
+    if (galleryref.current) {
+      galleryref.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div>
       <Navbar
@@ -69,6 +79,7 @@ export default function Home() {
         setshowmenu={setshowmenu}
         explore={true}
         page={"home"}
+        scrollToGallery={scrollToGallery}
       />
       <div className="flex flex-col gap-5 p-5 mt-8 justify-evenly lg:flex-row md:gap-0">
         <div className="space-y-6">
@@ -178,7 +189,11 @@ export default function Home() {
           <FaAngleUp size={23} color="white" />
         </div>
       </div>
-      <Gallery />
+
+      <div ref={galleryref} className="mb-8">
+        <h1 className="text-3xl font-semibold text-center">Our Work </h1>
+        <Gallery />
+      </div>
       <Footer />
     </div>
   );

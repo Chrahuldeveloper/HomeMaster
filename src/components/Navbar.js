@@ -247,7 +247,10 @@ export default function Navbar({
               </li>
 
               <li
-                onClick={scrollToGallery}
+                onClick={()=>{
+                  scrollToGallery()
+                  setshowmenu(false)
+                }}
                 className="flex items-center justify-between gap-6 cursor-pointer w-28"
               >
                 <RiGalleryLine size={23} color="black" />

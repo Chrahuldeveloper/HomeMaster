@@ -18,6 +18,7 @@ import Loader from "./Loader";
 import { signOut } from "firebase/auth";
 import { auth } from "../Firebase";
 import { MdHome } from "react-icons/md";
+import { RiGalleryLine } from "react-icons/ri";
 
 export default function Navbar({ showmenu, setshowmenu, page }) {
   const notify = () => toast.success("Login Successfully!");
@@ -105,6 +106,13 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
               >
                 <Link to={"/explore"}>Explore</Link>
               </li>
+              <li
+                className={`cursor-pointer  ${
+                  page === "gallery" ? "text-violet-500  font-semibold" : null
+                } `}
+              >
+                <Link to={"/gallery"}>Gallery</Link>
+              </li>
             </ul>
             <div className="flex items-center gap-2">
               <IoLocationOutline size={23} color="gray" />
@@ -184,7 +192,7 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
       </nav>
       {showmenu ? (
         <aside className="fixed inset-0 z-50 h-full bg-black bg-opacity-75 backdrop-blur-md">
-          <div className="text-[#545454] text-sm w-[68vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
+          <div className="text-[#545454] text-sm w-[60vw] h-screen fixed top-0 bg-white  border-r-[1px] border-gray-300">
             <div className="flex justify-end mt-5 px-7">
               <RxCross2
                 size={33}
@@ -214,11 +222,41 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
 
               <li>
                 <Link
+                  to="/about"
+                  className="flex items-center justify-between gap-6 rsor-pointer mx w-28"
+                >
+                  <FcAbout size={25} color="black" />
+                  <h1>About</h1>
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   to={"/explore"}
                   className="flex items-center justify-between gap-6 cursor-pointer w-28"
                 >
                   <FaRegCompass size={23} color="black" />
                   <h1>Explore</h1>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to={"/gallery"}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <RiGalleryLine size={23} color="black" />
+                  <h1>Gallery</h1>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to={"/contact"}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
+                  <CiPhone size={23} color="black" />
+                  <h1>Contact</h1>
                 </Link>
               </li>
 
@@ -232,24 +270,8 @@ export default function Navbar({ showmenu, setshowmenu, page }) {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  to="/about"
-                  className="flex items-center justify-between gap-6 rsor-pointer mx w-28"
-                >
-                  <FcAbout size={25} color="black" />
-                  <h1>About</h1>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"/contact"}
-                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
-                >
-                  <CiPhone size={23} color="black" />
-                  <h1>Contact</h1>
-                </Link>
-              </li>
+             
+             
               {user ? (
                 <li
                   onClick={() => {

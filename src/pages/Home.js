@@ -7,6 +7,7 @@ import data4 from "../data/Data4";
 import data5 from "../data/Data5";
 import img1 from "../images/img1.png";
 import { Link } from "react-router-dom";
+import { FaAngleUp } from "react-icons/fa6";
 
 export default function Home() {
   const data = [
@@ -54,9 +55,21 @@ export default function Home() {
 
   const [showmenu, setshowmenu] = useState(false);
 
+  const scrolltoTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div>
-      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={true}  page={"home"}/>
+      <Navbar
+        showmenu={showmenu}
+        setshowmenu={setshowmenu}
+        explore={true}
+        page={"home"}
+      />
       <div className="flex flex-col gap-5 p-5 mt-8 justify-evenly lg:flex-row md:gap-0">
         <div className="space-y-6">
           <h1 className="max-w-xs text-3xl font-semibold">
@@ -156,6 +169,16 @@ export default function Home() {
       <ServiceCards tittle={"Home Cleaning"} data={data4} />
       <ServiceCards tittle={"Pest Control"} data={data3} />
       <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
+
+      <div className="fixed bottom-10 right-5">
+        <div
+          onClick={scrolltoTop}
+          className="bg-[#6e42e5] p-1.5 rounded-md flex justify-center cursor-pointer  w-10 h-10"
+        >
+          <FaAngleUp size={23} color="white" />
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

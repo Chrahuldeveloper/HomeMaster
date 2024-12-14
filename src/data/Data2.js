@@ -1,6 +1,6 @@
 const data2 = [
   {
-    img: "https://homemaster.in/upload/servicedetails/Fresh_Painting.jpg",
+    img: "https://media.istockphoto.com/id/468120950/photo/house-painter-painting-the-trim-and-shutters-of-home.jpg?s=612x612&w=0&k=20&c=vYOc_5bIpw-sLKfwLSMU2l0vC3tNn2E14s2-hTvOscA=",
     tittle: "Exterior Painting",
     price: "299",
     Introduction:
@@ -54,7 +54,7 @@ const data2 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/servicedetails/Repainting.jpg",
+    img: "https://media.istockphoto.com/id/534129810/photo/textured-rainbow-painted-background.jpg?s=612x612&w=0&k=20&c=NfTjl7A-0P6XodFPXGpnZuFR9ev9JP__WLStD7KItH4=",
     tittle: "Texture Painting",
     price: "349",
     Introduction:
@@ -72,7 +72,7 @@ const data2 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/servicedetails/Fresh_Painting.jpg",
+    img: "https://media.istockphoto.com/id/1169082221/photo/spray-paint-and-cleaning.jpg?s=612x612&w=0&k=20&c=cMyynJgtCY9uJLvIZkvcR3g0zJotxDlCs7prg7iopZY=",
     tittle: "Industrial Painting",
     price: "499",
     Introduction:
@@ -90,7 +90,7 @@ const data2 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/servicedetails/Repainting.jpg",
+    img: "https://www.shutterstock.com/image-photo/two-male-workers-professional-home-600nw-2408468955.jpg",
     tittle: "Commercial Painting",
     price: "399",
     Introduction:

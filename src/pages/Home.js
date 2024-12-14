@@ -66,7 +66,7 @@ export default function Home() {
             <h1 className="text-[#545454] text-xl font-semibold">
               What are you looking for?
             </h1>
-            <div className="grid max-w-md grid-cols-2 gap-5 p-6 border-gray-200 md:grid-cols-1 lg:grid-cols-3">
+            <div className="grid max-w-md grid-cols-2 gap-5 mt-1.5 border-gray-200 md:grid-cols-1 lg:grid-cols-3">
               {data.map((i, id) => {
                 return (
                   <Link
@@ -80,7 +80,7 @@ export default function Home() {
                         <div className="cursor-pointer " onClick={() => {}}>
                           <img
                             src={i.image}
-                            className="object-cover mx-auto duration-500 ease-in-out rounded-lg w-28 hover:brightness-75"
+                            className="object-cover mx-auto duration-500 ease-in-out rounded-lg w-28 hover:brightness-75 hover:scale-105"
                             alt=""
                           />
                         </div>

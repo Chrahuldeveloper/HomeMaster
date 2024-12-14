@@ -29,9 +29,6 @@ export default function SubService() {
     <div>
       <Navbar showmenu={showmenu} setshowmenu={setshowmenu} explore={false} />
 
-      <div className="px-16 mt-10">
-        <h1 className="text-2xl font-semibold ">{service.state.service}</h1>
-      </div>
 
       <div className="grid justify-center grid-cols-1 gap-10 lg:gap-0 sm:grid-cols-2 md:grid-cols-3 place-items-center lg:px-14">
         {service.state.service === "Painting" ? (

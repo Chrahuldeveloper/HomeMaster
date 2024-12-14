@@ -175,8 +175,8 @@ export default function Home() {
           );
         })}
       </div>
-      <ServiceCards tittle={"Painting"} data={data2} />
       <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
+      <ServiceCards tittle={"Painting"} data={data2} />
       <ServiceCards tittle={"Home Cleaning"} data={data4} />
       <ServiceCards tittle={"Pest Control"} data={data3} />
       <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />

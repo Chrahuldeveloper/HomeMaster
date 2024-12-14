@@ -29,7 +29,7 @@ export default function Explore() {
     },
     {
       tittle: "Beauty & Services",
-      image: "https://homemaster.in/upload/service/Electrical.jpg",
+      image: "https://imgmedia.lbb.in/media/2020/02/5e4d51ba6e343b1b20e148ec_1582125498852.jpg",
     },
   ];
 

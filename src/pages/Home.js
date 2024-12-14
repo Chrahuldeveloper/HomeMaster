@@ -34,7 +34,8 @@ export default function Home() {
     },
     {
       tittle: "Beauty & Services",
-      image: "https://homemaster.in/upload/service/Electrical.jpg",
+      image:
+        "https://imgmedia.lbb.in/media/2020/02/5e4d51ba6e343b1b20e148ec_1582125498852.jpg",
     },
   ];
 
@@ -181,18 +182,20 @@ export default function Home() {
       <ServiceCards tittle={"Pest Control"} data={data3} />
       <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
 
+      
+
+      <div ref={galleryref} className="mb-8 ">
+        <h1 className="text-3xl font-semibold text-center">Our Work </h1>
+        <Gallery />
+      </div>
+
       <div className="fixed bottom-10 right-5">
         <div
           onClick={scrolltoTop}
-          className="bg-[#6e42e5] p-1.5 rounded-md flex justify-center cursor-pointer  w-10 h-10"
+          className="bg-[#6e42e5] p-1.5 rounded-md flex justify-center cursor-pointer  w-10 h-10 z-50"
         >
           <FaAngleUp size={23} color="white" />
         </div>
-      </div>
-
-      <div ref={galleryref} className="mb-8">
-        <h1 className="text-3xl font-semibold text-center">Our Work </h1>
-        <Gallery />
       </div>
       <Footer />
     </div>

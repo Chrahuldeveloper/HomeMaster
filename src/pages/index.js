@@ -5,5 +5,6 @@ import SubService from "./SubService";
 import CheckOut from "./CheckOut";
 import About from "./About";
 import Contact from "./Contact";
+import Explore from "./Explore";
 
-export { Service, Home, Cart, SubService, CheckOut, About, Contact };
+export { Service, Explore, Home, Cart, SubService, CheckOut, About, Contact };

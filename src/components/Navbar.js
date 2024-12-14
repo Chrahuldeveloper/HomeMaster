@@ -17,8 +17,9 @@ import ProductCart from "../utils/Cart";
 import Loader from "./Loader";
 import { signOut } from "firebase/auth";
 import { auth } from "../Firebase";
+import { MdHome } from "react-icons/md";
 
-export default function Navbar({ showmenu, setshowmenu, explore, page }) {
+export default function Navbar({ showmenu, setshowmenu, page }) {
   const notify = () => toast.success("Login Successfully!");
   const notify1 = () => toast.success("Logout Successfully!");
   const products = useMemo(() => new ProductCart(), []);
@@ -71,9 +72,18 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
         <div className="flex items-center justify-between gap-5 px-6 md:justify-around">
           <div className="flex items-center gap-8">
             <div>
-              <img src={logo} alt="" className="w-20 h-20 " />
+              <Link to={"/"}>
+                <img src={logo} alt="" className="w-20 h-20 " />
+              </Link>
             </div>
             <ul className="text-[#545454] text-sm  md:flex items-center gap-6 hidden ">
+              <li
+                className={`cursor-pointer  ${
+                  page === "home" ? "text-violet-500  font-semibold" : null
+                } `}
+              >
+                <Link to={"/"}>Home</Link>
+              </li>
               <li
                 className={`cursor-pointer  ${
                   page === "About" ? "text-violet-500  font-semibold" : null
@@ -88,7 +98,13 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
               >
                 <Link to={"/contact"}>Contact</Link>
               </li>
-              {explore ? <li className="cursor-pointer ">Explore</li> : null}
+              <li
+                className={`cursor-pointer  ${
+                  page === "explore" ? "text-violet-500  font-semibold" : null
+                } `}
+              >
+                <Link to={"/explore"}>Explore</Link>
+              </li>
             </ul>
             <div className="flex items-center gap-2">
               <IoLocationOutline size={23} color="gray" />
@@ -181,15 +197,31 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
               />
             </div>
             <div className="flex flex-col pl-8">
-              <img src={logo} alt="" className="w-20 h-20 " />
+              <Link to="/">
+                <img src={logo} alt="" className="w-20 h-20 " />
+              </Link>
             </div>
             <ul className="pl-8 space-y-10 font-semibold text-center mt-7">
-              {explore ? (
-                <li className="flex items-center justify-between gap-6 cursor-pointer w-28">
+              <li>
+                <Link
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                  to={"/"}
+                >
+                  <MdHome size={23} color="black" />
+                  <h1>Home</h1>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to={"/explore"}
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                >
                   <FaRegCompass size={23} color="black" />
                   <h1>Explore</h1>
-                </li>
-              ) : null}
+                </Link>
+              </li>
+
               <li>
                 <Link
                   to={"/cart"}
@@ -212,7 +244,7 @@ export default function Navbar({ showmenu, setshowmenu, explore, page }) {
               <li>
                 <Link
                   to={"/contact"}
-                className="flex items-center justify-between gap-6 cursor-pointer w-28"
+                  className="flex items-center justify-between gap-6 cursor-pointer w-28"
                 >
                   <CiPhone size={23} color="black" />
                   <h1>Contact</h1>

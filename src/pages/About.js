@@ -18,7 +18,6 @@ export default function About() {
         <Navbar
           showmenu={showmenu}
           setshowmenu={setshowmenu}
-          explore={false}
           page={"About"}
         />
         <div className="flex flex-col gap-6 p-5 my-10 md:flex-row md:justify-evenly md:gap-0">

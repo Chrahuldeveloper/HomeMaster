@@ -8,6 +8,7 @@ import {
   CheckOut,
   About,
   Contact,
+  Explore,
 } from "./pages/index";
 import { Routes, Route } from "react-router-dom";
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route element={<CheckOut />} path="/checkout" />
         <Route element={<About />} path="/about" />
         <Route element={<Contact />} path="/contact" />
+        <Route element={<Explore />} path="/explore" />
       </Routes>
     </div>
   );

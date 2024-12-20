@@ -6,6 +6,7 @@ import data3 from "../data/Data3";
 import data4 from "../data/Data4";
 import data5 from "../data/Data5";
 import { Footer, Navbar, ServiceCards } from "../components";
+import data6 from "../data/Data6";
 
 export default function SubService() {
   const service = useLocation();
@@ -40,6 +41,8 @@ export default function SubService() {
           <ServiceCards data={data3} />
         ) : service.state.service === "Electrical & Plumbing" ? (
           <ServiceCards data={data5} />
+        ) : service.state.service === "Beauty & Services" ? (
+          <ServiceCards data={data6} />
         ) : null}
       </div>
 

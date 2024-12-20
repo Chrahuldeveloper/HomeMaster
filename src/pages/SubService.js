@@ -32,17 +32,17 @@ export default function SubService() {
 
       <div className="grid justify-center grid-cols-1 gap-10 lg:gap-0 sm:grid-cols-2 md:grid-cols-3 place-items-center lg:px-14">
         {service.state.service === "Painting" ? (
-          <ServiceCards data={data2} />
+          <ServiceCards data={data2} redirect={true} />
         ) : service.state.service === "AC And Appliance Services" ? (
-          <ServiceCards data={data1} />
+          <ServiceCards data={data1} redirect={true} />
         ) : service.state.service === "Home Cleaning" ? (
-          <ServiceCards data={data4} />
+          <ServiceCards data={data4} redirect={true} />
         ) : service.state.service === "Pest Control" ? (
-          <ServiceCards data={data3} />
+          <ServiceCards data={data3} redirect={true} />
         ) : service.state.service === "Electrical & Plumbing" ? (
-          <ServiceCards data={data5} />
+          <ServiceCards data={data5} redirect={true} />
         ) : service.state.service === "Beauty & Services" ? (
-          <ServiceCards data={data6} />
+          <ServiceCards data={data6} redirect={false} />
         ) : null}
       </div>
 

@@ -31,8 +31,9 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h1 className="text-xl font-semibold">Contact Us</h1>
             <ul className="mt-3 space-y-3">
-              <li className="text-gray-700">homemaster@gmail.com</li>
-              <li className="text-gray-700">9928492720</li>
+              <li className="text-gray-700">jaladseva@gmail.com</li>
+              <li className="text-gray-700">8622949494</li>
+              <li className="text-gray-700">8622939393</li>
             </ul>
           </div>
           <div className="text-center md:text-left">

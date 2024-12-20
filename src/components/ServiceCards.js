@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function ServiceCards({ tittle, data, redirect }) {
   return (
+    <>
+
     <div className="w-[88vw] mx-auto my-14">
       <div>
         <h1 className="px-10 text-lg font-semibold md:text-3xl">{tittle}</h1>
@@ -51,5 +53,24 @@ export default function ServiceCards({ tittle, data, redirect }) {
         </div>
       </div>
     </div>
+
+
+
+
+
+   <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
+
+   <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+     
+     
+
+   </div>
+
+   </div>
+
+
+
+    
+    </>
   );
 }

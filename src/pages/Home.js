@@ -43,18 +43,18 @@ export default function Home() {
   const howWeWork = [
     {
       tittle: "Book online in 60 seconds",
-      para: "Book & pay online. We'll match you with a trusted, experienced house cleaner",
+      para: "Easily book and pay online. We'll connect you with a reliable, experienced cleaner for your home.",
     },
     {
-      tittle: "Get a 5 star cleaner",
-      para: "Book & pay online. We'll match you with a trusted, experienced house cleaner",
+      tittle: "Get a top-rated cleaner",
+      para: "We'll assign a trusted, highly-rated cleaner to your job, ensuring quality and satisfaction.",
     },
     {
       tittle: "Manage everything online",
-      para: "Book & pay online. We'll match you with a trusted, experienced house cleaner",
+      para: "Track and manage your bookings, payments, and services effortlessly through our online platform.",
     },
   ];
-
+  
   const [showmenu, setshowmenu] = useState(false);
 
   const scrolltoTop = () => {
@@ -151,7 +151,7 @@ export default function Home() {
             className="object-cover w-12 h-12"
           />
           <div className="flex flex-col">
-            <h1 className="text-xl font-semibold">12M+</h1>
+            <h1 className="text-xl font-semibold">2.5Lak+</h1>
             <p className="text-sm text-gray-600">Customers Globally</p>
           </div>
         </div>
@@ -178,11 +178,11 @@ export default function Home() {
         })}
       </div>
       <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
-      <ServiceCards tittle={"Painting"} data={data2} />
-      <ServiceCards tittle={"Home Cleaning"} data={data4} />
-      <ServiceCards tittle={"Pest Control"} data={data3} />
-      <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
       <ServiceCards tittle={"Beauty Services"} data={data6} />
+      <ServiceCards tittle={"Painting"} data={data2} />
+      <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
+      <ServiceCards tittle={"Pest Control"} data={data3} />
+      <ServiceCards tittle={"Home Cleaning"} data={data4} />
 
       <div ref={galleryref} className="mb-8 ">
         <h1 className="text-3xl font-semibold text-center">Our Work </h1>

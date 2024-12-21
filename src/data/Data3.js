@@ -179,7 +179,7 @@ const data3 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/servicedetails/Mosquito_Control.jpg",
+    img: "https://t4.ftcdn.net/jpg/01/63/78/57/360_F_163785782_uRLW0afI35WgvsgFx7Ghp5pVGNiMqt1a.jpg",
     tittle: "Mosquito Control",
     price: "1000",
     Introduction:
@@ -202,7 +202,7 @@ const data3 = [
   },
 
   {
-    img: "https://homemaster.in/upload/servicedetails/Mosquito_Control.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhOxI3rPK_hPQjVOcgEuR1qvhApEmopMzHwQ&s",
     tittle: "Lizard Control",
     price: "1000",
     Introduction:
@@ -248,7 +248,7 @@ const data3 = [
   },
 
   {
-    img: "https://homemaster.in/upload/servicedetails/Mosquito_Control.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScsYrnXAxu8AmkNhBMao_JiGfWbHUImz_bvw&s",
     tittle: "Bees Control",
     price: "1000",
     Introduction:
@@ -270,28 +270,28 @@ const data3 = [
     ],
   },
 
-  {
-    img: "https://homemaster.in/upload/servicedetails/Mosquito_Control.jpg",
-    tittle: "Tich Control",
-    price: "1000",
-    Introduction:
-      "Our Mosquito Control Service provides effective solutions to eliminate mosquitoes from your premises, ensuring a safe and healthy living environment.",
-    Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Mosquito Control Service ensures the removal of mosquitoes from your home or office, focusing on both treatment and prevention. With eco-friendly techniques and professional application, we help protect your family from mosquito-borne diseases and improve overall comfort.",
-    InclusionsExclusions: [
-      "Inspection and identification of breeding grounds",
-      "Use of safe and certified insecticides",
-      "Treatment of both indoor and outdoor areas",
-      "Permanent water drainage solutions",
-      "Structural modifications to eliminate breeding sites",
-      "Guarantee against re-infestation due to external factors",
-    ],
-    Procedure: [
-      "Inspection of the property to identify mosquito breeding sites",
-      "Application of mosquito repellents and insecticides in key areas",
-      "Treatment of stagnant water sources to prevent breeding",
-      "Fogging or spraying to target active mosquitoes",
-    ],
-  },
+  // {
+  //   img: "https://homemaster.in/upload/servicedetails/Mosquito_Control.jpg",
+  //   tittle: "Tich Control",
+  //   price: "1000",
+  //   Introduction:
+  //     "Our Mosquito Control Service provides effective solutions to eliminate mosquitoes from your premises, ensuring a safe and healthy living environment.",
+  //   Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Mosquito Control Service ensures the removal of mosquitoes from your home or office, focusing on both treatment and prevention. With eco-friendly techniques and professional application, we help protect your family from mosquito-borne diseases and improve overall comfort.",
+  //   InclusionsExclusions: [
+  //     "Inspection and identification of breeding grounds",
+  //     "Use of safe and certified insecticides",
+  //     "Treatment of both indoor and outdoor areas",
+  //     "Permanent water drainage solutions",
+  //     "Structural modifications to eliminate breeding sites",
+  //     "Guarantee against re-infestation due to external factors",
+  //   ],
+  //   Procedure: [
+  //     "Inspection of the property to identify mosquito breeding sites",
+  //     "Application of mosquito repellents and insecticides in key areas",
+  //     "Treatment of stagnant water sources to prevent breeding",
+  //     "Fogging or spraying to target active mosquitoes",
+  //   ],
+  // },
 ];
 
 export default data3;

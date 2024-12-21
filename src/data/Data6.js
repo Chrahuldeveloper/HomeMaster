@@ -1,6 +1,6 @@
 const data6 = [
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://media.istockphoto.com/id/1131441553/photo/professional-wearing-white-jacket-making-wax-depilation.jpg?s=612x612&w=0&k=20&c=56XChpLz9ZvE3brf3VD9bSszJ5cYyj3_22uzN32n9fo=",
     tittle: "Waxing",
     price: "On Inspection",
     Introduction:
@@ -18,7 +18,7 @@ const data6 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://static.wixstatic.com/media/28d39c_39fee459703c4ddcb33b511055322794~mv2.jpg/v1/fill/w_568,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/28d39c_39fee459703c4ddcb33b511055322794~mv2.jpg",
     tittle: "Pedicure & Manicure",
     price: "On Inspection",
     Introduction:
@@ -36,7 +36,7 @@ const data6 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://media.istockphoto.com/id/1399469980/photo/close-up-portrait-of-anorganic-facial-mask-application-at-spa-salon-facial-treatment-skin.jpg?s=612x612&w=0&k=20&c=ZvZi_bdGLicsykUtlrHgQe70ftZzd_xPKvq2vzfOyV0=",
     tittle: "Facial",
     price: "On Inspection",
     Introduction:
@@ -54,7 +54,7 @@ const data6 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7TPZ41z_3yMU-oqJ4IhaOQ1VFx6304jVt5ZGL4lXaPJXC-3lI94G8K2Z3fKLlq28nySc&usqp=CAU",
     tittle: "Cleanup",
     price: "On Inspection",
     Introduction:
@@ -72,7 +72,7 @@ const data6 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://www.shutterstock.com/image-photo/hairdresser-applying-bleaching-powder-on-600nw-2159376607.jpg",
     tittle: "Hair Bleach & Detan",
     price: "On Inspection",
     Introduction:

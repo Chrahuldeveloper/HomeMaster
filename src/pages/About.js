@@ -6,11 +6,9 @@ import { AiOutlineAim } from "react-icons/ai";
 export default function About() {
   const [showmenu, setshowmenu] = useState(false);
 
-  
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
-
 
   return (
     <>
@@ -19,7 +17,7 @@ export default function About() {
           showmenu={showmenu}
           setshowmenu={setshowmenu}
           page={"About"}
-          hide="gallery" 
+          hide="gallery"
         />
         <div className="flex flex-col gap-6 p-5 my-10 md:flex-row md:justify-evenly md:gap-0">
           <div>
@@ -55,9 +53,9 @@ export default function About() {
             <div className="space-y-2.5">
               <h1 className="text-xl font-semibold">Our Mission</h1>
               <p className="text-gray-500 ">
-                Aims to be a national market leader in the provision of cleaning
-                services delivering reliable, quality, cost effective cleaning
-                solutions to our customers.
+                Aims to be the market leader in Pune for providing cleaning
+                services, delivering reliable, high-quality, and cost-effective
+                cleaning solutions to our customers.
               </p>
             </div>
           </div>
@@ -67,9 +65,8 @@ export default function About() {
             <div className="space-y-2.5">
               <h1 className="text-xl font-semibold">Our Vision</h1>
               <p className="text-gray-500 ">
-                We have more than 215 franchise locations across the United
-                States and Canada. All of them are committed to the same common
-                values and principles.
+                We have a strong presence across Pune, committed to the same
+                core values and principles at all our locations.
               </p>
             </div>
           </div>

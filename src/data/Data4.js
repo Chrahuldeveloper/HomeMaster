@@ -118,7 +118,7 @@ const data4 = [
   },
 
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://5.imimg.com/data5/SELLER/Default/2023/12/367680388/OV/GZ/HU/26356278/premium-furnished-bungalow-cleaning-service.jpeg",
     tittle: "Bunglow Cleaning",
     price: "On Inspection",
     Introduction:
@@ -136,7 +136,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://media.istockphoto.com/id/1363376686/photo/handsome-asian-man-wearing-apron-cleaning-floor-at-home-guy-washing-floor-with-mopping-stick.jpg?s=612x612&w=0&k=20&c=g2kmWxPKKi7FkfpMyFrKWL5T3iRSnxsJ2gx6hO1Eha8=",
     tittle: "Raw House Cleaning",
     price: "On Inspection",
     Introduction:
@@ -154,7 +154,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://media.istockphoto.com/id/1372306674/photo/man-cleaning-the-terrace-tiles-of-the-apartment.jpg?s=612x612&w=0&k=20&c=2XvsouVZfMi1KcZn42ZzWp-KLPrxmyBx7Xp7wx-CHHg=",
     tittle: "Farm House Cleaning",
     price: "On Inspection",
     Introduction:
@@ -172,7 +172,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://www.shutterstock.com/image-photo/cleaner-female-homeowner-tidying-home-260nw-2479511663.jpg",
     tittle: "Project Cleaning",
     price: "On Inspection",
     Introduction:
@@ -190,7 +190,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://media.istockphoto.com/id/518333250/photo/steam-cleaning-the-office-carpet.jpg?s=612x612&w=0&k=20&c=UlIKHazn11ghDXwUmMlVlQepkbtk_G_WybVIhv_78HI=",
     tittle: "Office Carpet Shampooing",
     price: "On Inspection",
     Introduction:
@@ -208,7 +208,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://www.leofabasia.com/images/services/facade-cleaning.jpg",
     tittle: "Facade Cleaning",
     price: "On Inspection",
     Introduction:
@@ -226,7 +226,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://t4.ftcdn.net/jpg/03/20/28/73/360_F_320287361_Cq6lb6COc1Wwd7gF1jUoGCz3Waq5mO8o.jpg",
     tittle: "Bathroom Cleaning",
     price: "600",
     Introduction:
@@ -244,7 +244,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoCNvSCgwH_PnO1Kbsz1GYnKWYYdrvxJtrnA&s",
     tittle: "Kitchen Cleaning",
     price: "600",
     Introduction:
@@ -262,7 +262,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://img.freepik.com/free-photo/full-shot-man-vacuuming-couch_23-2149482278.jpg?semt=ais_hybrid",
     tittle: "Sofa Cleaning",
     price: "1000",
     Introduction:
@@ -280,7 +280,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://t3.ftcdn.net/jpg/02/18/97/04/360_F_218970417_HqekNsoEJHkbN14V89RKagpY4sY2V6dd.jpg",
     tittle: "Home  Carpet Cleaning",
     price: "500",
     Introduction:
@@ -298,7 +298,7 @@ const data4 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/subservices/VILLA.jpg",
+    img: "https://media.istockphoto.com/id/1150282133/photo/cleaning-window-pane-with-detergent.jpg?s=612x612&w=0&k=20&c=BkzVas8qZ_VLxLDWpDAPbVSDRXgRFMxbI3_NHcamUfk=",
     tittle: "Window  Cleaning",
     price: "1800",
     Introduction:

@@ -92,7 +92,7 @@ const data5 = [
     ],
   },
   {
-    img: "https://homemaster.in/upload/servicedetails/Malaria_Control.jpg",
+    img: "https://homemaster.in/upload/servicedetails/Pipelines_And_Pumps11.jpg",
     tittle: "Pipelines And Pumps",
     price: "299",
     Introduction:

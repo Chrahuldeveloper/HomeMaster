@@ -139,6 +139,7 @@ export default function Navbar({
             />
           </div>
           <div className="items-center hidden gap-5 lg:flex">
+            <h1 className="text-sm font-semibold">91+8622949494</h1>
             <Link to="/cart">
               {count && user ? (
                 <div className="absolute flex items-center justify-center w-4 h-4 p-3 text-center text-white translate-x-3 bg-red-500 rounded-full top-7">
@@ -151,6 +152,7 @@ export default function Navbar({
                 cursor={"pointer"}
               />
             </Link>
+
             <CgProfile
               onClick={() => {
                 setistoggle(!istoggle);

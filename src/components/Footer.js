@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#f5f5f5] md:h-[50vh] p-10 text-center">
+      <footer className="bg-[#f5f5f5] md:h-[60vh] p-10 text-center">
         <div className="pr-4 lg:px-44">
           <img
             src={logo}
@@ -82,6 +82,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+        <h1 className="text-sm font-semibold text-center text-gray-500 bg-[#f5f5f5] ">
+          Designed and Developed By WiDigitalize
+        </h1>
       </footer>
     </>
   );

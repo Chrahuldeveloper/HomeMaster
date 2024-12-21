@@ -60,10 +60,10 @@ export default function ServiceCards({
                         className="object-cover w-full h-40 duration-500 ease-in-out rounded-lg"
                       />
                       <h1 className="text-lg font-semibold">{i.tittle}</h1>
-                      <p className="font-semibold text-gray-700">
+                      <p className="text-sm font-semibold text-gray-700">
                         {i.price === "On Inspection"
                           ? "On Inspection"
-                          : "Price" + "" + i.price + "" + "Rs"}
+                          : "Price" + " " + i.price + " " + "Rs"}
                       </p>
                     </div>
                   )}

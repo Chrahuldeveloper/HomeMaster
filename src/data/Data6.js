@@ -90,9 +90,5 @@ const data6 = [
     ],
   },
 ];
-  
-
-
-
 
 export default data6;

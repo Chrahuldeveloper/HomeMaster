@@ -33,8 +33,8 @@ export default function Footer() {
             <ul className="mt-3 space-y-3">
               <li className="text-gray-700">jaladseva@gmail.com</li>
               <li className="text-gray-700">8622949494</li>
+              <li className="text-gray-700">9822667624</li>
               <li className="text-gray-700">8622939393</li>
-              <li className="text-gray-700">9822667624 </li>
             </ul>
           </div>
           <div className="text-center md:text-left">

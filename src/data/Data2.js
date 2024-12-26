@@ -38,7 +38,7 @@ const data2 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Fresh_Painting.jpg",
     tittle: "Rental Property Painting",
-    price: "starts Rs 5000 Per flat R",
+    price: "starts Rs 5000 Per flat",
     Introduction:
       "Make your rental property stand out with our affordable and quick painting services. We work around your schedule, ensuring your property looks brand new without disturbing tenants.",
     Time: "Estimated time: 2 to 4 hours depending on room size and prep work.",

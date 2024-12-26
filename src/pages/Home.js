@@ -177,12 +177,20 @@ export default function Home() {
           );
         })}
       </div>
-      <ServiceCards tittle={"AC And Appliance Services"} data={data1} />
-      <ServiceCards tittle={"Beauty Services"} data={data6} />
-      <ServiceCards tittle={"Painting"} data={data2} />
-      <ServiceCards tittle={"Electrical & Plumbing "} data={data5} />
-      <ServiceCards tittle={"Pest Control"} data={data3} />
-      <ServiceCards tittle={"Home Cleaning"} data={data4} />
+      <ServiceCards
+        tittle={"AC And Appliance Services"}
+        data={data1}
+        redirect={true}
+      />
+      <ServiceCards tittle={"Beauty Services"} data={data6} redirect={true} />
+      <ServiceCards tittle={"Painting"} data={data2} redirect={true} />
+      <ServiceCards
+        tittle={"Electrical & Plumbing "}
+        data={data5}
+        redirect={true}
+      />
+      <ServiceCards tittle={"Pest Control"} data={data3} redirect={true} />
+      <ServiceCards tittle={"Home Cleaning"} data={data4} redirect={true} />
 
       <div ref={galleryref} className="mb-8 ">
         <h1 className="text-3xl font-semibold text-center">Our Work </h1>

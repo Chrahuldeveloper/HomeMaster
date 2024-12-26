@@ -69,7 +69,7 @@ const data3 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Bed_Bugs.jpg",
     tittle: "Bed Bugs",
-    price: "Rs 2000",
+    price: "Rs 2000 for 1 BHK",
     Introduction:
       "Our Bed Bugs Control Service effectively eliminates bed bug infestations, ensuring your home or office is a safe, comfortable, and pest-free space.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following:Our Bed Bugs Control Service provides a comprehensive approach to eliminate bed bugs and their eggs. Using a combination of treatments and preventive measures, we ensure your space remains free from these nocturnal pests, ensuring comfort and safety.",
@@ -91,7 +91,7 @@ const data3 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Malaria_Control.jpg",
     tittle: "Malaria Control",
-    price: "Rs 1500",
+    price: "Rs 1500 for 1 BHK",
     Introduction:
       "Our Malaria Control Service targets the prevention and elimination of mosquitoes that spread malaria, ensuring a safe and healthy environment for your home or business.",
     Time: "2 to 6 hours, depending upon floor type and sizeEvery time we clean, we'll provide services that include the following:Our Malaria Control Service is designed to eradicate mosquitoes responsible for spreading malaria. By eliminating breeding grounds and targeting adult mosquitoes, we help protect your family and reduce the risk of mosquito-borne diseases.",
@@ -137,7 +137,7 @@ const data3 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Ant_Control.jpg",
     tittle: "Ant Control",
-    price: "Rs 1000",
+    price: "Rs 1000 for 1 BHK",
     Introduction:
       "Our Ant Control Service effectively eliminates ant infestations, protecting your property from damage and ensuring a pest-free environment.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Ant Control Service targets and eradicates ant colonies, preventing further damage to your property. By using eco-friendly and effective methods, we ensure your home or business remains free from ants, promoting a cleaner and healthier space.",
@@ -159,7 +159,7 @@ const data3 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Rodent_Control.jpg",
     tittle: "Rodent Control",
-    price: "Rs 1000",
+    price: "Rs 1000 for 1 BHK",
     Introduction:
       "Our Rodent Control Service eliminates rats and mice from your premises, protecting your property and health from damage and contamination.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Rodent Control Service offers a comprehensive approach to rid your home or workplace of rodents. Using safe and effective methods, we ensure your space is rodent-free and secure from further infestations, promoting a healthy and hygienic environment",
@@ -181,7 +181,7 @@ const data3 = [
   {
     img: "https://t4.ftcdn.net/jpg/01/63/78/57/360_F_163785782_uRLW0afI35WgvsgFx7Ghp5pVGNiMqt1a.jpg",
     tittle: "Mosquito Control",
-    price: "Rs 1000",
+    price: "Rs 1000 for 1 BHK",
     Introduction:
       "Our Mosquito Control Service provides effective solutions to eliminate mosquitoes from your premises, ensuring a safe and healthy living environment.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Mosquito Control Service ensures the removal of mosquitoes from your home or office, focusing on both treatment and prevention. With eco-friendly techniques and professional application, we help protect your family from mosquito-borne diseases and improve overall comfort.",
@@ -227,7 +227,7 @@ const data3 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Mosquito_Control.jpg",
     tittle: "Silver Fish Control",
-    price: "Rs 1000",
+    price: "Rs 1000 for 1 BHK",
     Introduction:
       "Our Mosquito Control Service provides effective solutions to eliminate mosquitoes from your premises, ensuring a safe and healthy living environment.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Mosquito Control Service ensures the removal of mosquitoes from your home or office, focusing on both treatment and prevention. With eco-friendly techniques and professional application, we help protect your family from mosquito-borne diseases and improve overall comfort.",
@@ -250,7 +250,7 @@ const data3 = [
   {
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScsYrnXAxu8AmkNhBMao_JiGfWbHUImz_bvw&s",
     tittle: "Bees Control",
-    price: "Rs 1000",
+    price: "Rs 1000 for 1 BHK",
     Introduction:
       "Our Mosquito Control Service provides effective solutions to eliminate mosquitoes from your premises, ensuring a safe and healthy living environment.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Mosquito Control Service ensures the removal of mosquitoes from your home or office, focusing on both treatment and prevention. With eco-friendly techniques and professional application, we help protect your family from mosquito-borne diseases and improve overall comfort.",

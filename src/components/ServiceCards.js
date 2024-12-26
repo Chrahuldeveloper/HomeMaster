@@ -26,6 +26,12 @@ export default function ServiceCards({
                 <React.Fragment key={id}>
                   {redirect ? (
                     <Link
+                      data-aos="fade-up"
+                      data-aos-offset="200"
+                      data-aos-delay="50"
+                      data-aos-duration="1000"
+                      data-aos-easing="ease-in-out"
+                      data-aos-once="true"
                       to={`/service/${tittle}`}
                       state={{
                         otherService: data,

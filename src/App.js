@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import {
   Service,
@@ -11,7 +11,19 @@ import {
   Explore,
 } from "./pages/index";
 import { Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+    });
+  }, []);
+
   return (
     <div>
       <Routes>

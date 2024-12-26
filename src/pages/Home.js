@@ -164,7 +164,15 @@ export default function Home() {
         {howWeWork.map((i, id) => {
           return (
             <React.Fragment key={id}>
-              <div className="flex flex-col items-center justify-center max-w-sm space-y-3.5 border-gray-300 border-[1px] cursor-pointer  rounded-lg p-5">
+              <div
+                data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                className="flex flex-col items-center justify-center max-w-sm space-y-3.5 border-gray-300 border-[1px] cursor-pointer  rounded-lg p-5"
+              >
                 <div className="w-10 h-10 p-2 font-semibold text-center text-white rounded-full bg-violet-500">
                   {id + 1}
                 </div>

@@ -2,7 +2,7 @@ const data2 = [
   {
     img: "https://media.istockphoto.com/id/468120950/photo/house-painter-painting-the-trim-and-shutters-of-home.jpg?s=612x612&w=0&k=20&c=vYOc_5bIpw-sLKfwLSMU2l0vC3tNn2E14s2-hTvOscA=",
     tittle: "Exterior Painting",
-    price: "8 RS Per SQ-Feet",
+    price: "Rs 8 Per Sqft",
     Introduction:
       "Enhance the appearance of your home with our expert exterior painting services. Our team uses top-quality materials to ensure long-lasting results, while protecting your property from weather damage.",
     Time: "Estimated time: 4 to 6 hours based on area size and surface conditions.",
@@ -20,7 +20,7 @@ const data2 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Repainting.jpg",
     tittle: "Interior Painting",
-    price: "7 RS Per SQ-Feet",
+    price: "Rs 7 Per Sqft",
     Introduction:
       "Give your home or office a fresh look with our interior painting services. We focus on smooth, professional finishes with a minimal mess, ensuring a revitalized space.",
     Time: "Time estimate: 2 to 5 hours depending on room size and surface condition.",
@@ -38,7 +38,7 @@ const data2 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Fresh_Painting.jpg",
     tittle: "Rental Property Painting",
-    price: "149 RS",
+    price: "starts Rs 5000 Per flat R",
     Introduction:
       "Make your rental property stand out with our affordable and quick painting services. We work around your schedule, ensuring your property looks brand new without disturbing tenants.",
     Time: "Estimated time: 2 to 4 hours depending on room size and prep work.",
@@ -56,7 +56,7 @@ const data2 = [
   {
     img: "https://media.istockphoto.com/id/534129810/photo/textured-rainbow-painted-background.jpg?s=612x612&w=0&k=20&c=NfTjl7A-0P6XodFPXGpnZuFR9ev9JP__WLStD7KItH4=",
     tittle: "Texture Painting",
-    price: "25 RS Per SQ-Feet",
+    price: " Rs 25 Per Sqft",
     Introduction:
       "Add a sophisticated touch to your space with texture painting. Our skilled team applies various textures to give your walls depth and elegance.",
     Time: "Time estimate: 3 to 5 hours depending on texture complexity and area size.",
@@ -92,7 +92,7 @@ const data2 = [
   {
     img: "https://www.shutterstock.com/image-photo/two-male-workers-professional-home-600nw-2408468955.jpg",
     tittle: "Commercial Painting",
-    price: "9 RS Per SQ-Feet",
+    price: "Rs 9 Per Sqft",
     Introduction:
       "Revitalize your office or retail space with our professional commercial painting services. We ensure a clean, fresh look that enhances your business’s environment.",
     Time: "Estimated time: 4 to 8 hours depending on space size and preparation requirements.",

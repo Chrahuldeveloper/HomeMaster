@@ -2,7 +2,7 @@ const data5 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Inverter.jpg",
     tittle: "Inverter",
-    price: "299 RS",
+    price: "On Inspection",
     Introduction:
       "Our Inverter Service ensures your home or office’s inverter system runs efficiently, providing reliable backup power during outages and extending the lifespan of your device.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following:Our Inverter Service provides a thorough inspection and maintenance of your inverter system, ensuring that it’s ready to provide uninterrupted backup power. We address performance issues and ensure the longevity of your equipment, keeping your home or business running smoothly during power outages.",
@@ -25,7 +25,7 @@ const data5 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Wiring.jpg",
     tittle: "Wiring",
-    price: "299 RS",
+    price: "On Inspection",
     Introduction:
       "Our Wiring Service ensures that your home or business’s electrical wiring is safe, reliable, and compliant with modern standards, preventing electrical hazards and ensuring optimal performance.",
     Time: "2 to 6 hours Every time we clean, we'll provide services that include the following:Our Wiring Service provides expert inspection, maintenance, and upgrading of your electrical wiring system. We ensure that all wiring is safe, up-to-date, and compliant with regulations, helping to prevent electrical hazards and improve system efficiency.",
@@ -48,7 +48,7 @@ const data5 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Full_Home_Health_Check.jpg",
     tittle: " Other Electrical Services",
-    price: "299 RS",
+    price: "On Inspection",
     Introduction:
       "Our Other Electrical Services cover a wide range of electrical needs, from repairs to installations, ensuring your home or business operates safely and efficiently.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following:Our Other Electrical Services are designed to address a variety of electrical needs, from minor repairs to installations. Whether it’s fixing faulty outlets, upgrading lighting, or troubleshooting complex issues, we ensure that your electrical systems are safe and fully functional.",
@@ -71,7 +71,7 @@ const data5 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Other_Electrical_Services.jpg",
     tittle: "Full Home Electrical Check",
-    price: "200 RS",
+    price: "On Inspection",
     Introduction:
       "Our Full Home Electrical Check Service ensures that your home’s electrical system is safe, efficient, and compliant with the latest safety standards, helping to prevent potential hazards.",
     Time: "2 to 6 hoursEvery time we clean, we'll provide services that include the following:Our Full Home Electrical Check Service provides a thorough evaluation of your home’s electrical system, identifying potential hazards and inefficiencies. We offer expert advice and solutions to ensure that your home’s electrical infrastructure is safe and functioning optimally.",
@@ -94,7 +94,7 @@ const data5 = [
   {
     img: "https://homemaster.in/upload/servicedetails/Pipelines_And_Pumps11.jpg",
     tittle: "Pipelines And Pumps",
-    price: "299 RS",
+    price: "On Inspection",
     Introduction:
       "Our Pipelines and Pumps Service ensures your water distribution systems, pipelines, and pumps are functioning efficiently, preventing leaks, blockages, and performance issues.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our Pipelines and Pumps Service is designed to maintain the efficiency and longevity of your water distribution system. Through regular inspections, cleaning, and repairs, we ensure your pipes and pumps are free from issues, providing reliable water flow and pressure throughout your home or business.",
@@ -114,16 +114,6 @@ const data5 = [
       "Testing pump pressure and pipeline flow to confirm optimal performance",
     ],
   },
- 
-  // {
-  //   img: "https://homemaster.in/upload/servicedetails/Rodent_Control.jpg",
-  //   tittle: "Full Home Health Check",
-  //   price: "299",
-  //   Introduction: "",
-  //   Time: "",
-  //   InclusionsExclusions: [],
-  //   Procedure: [],
-  // },
 ];
 
 export default data5;

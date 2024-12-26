@@ -2,7 +2,7 @@ const data1 = [
   {
     img: "https://homemaster.in/upload/servicedetails/premium_photo-1682126012378-859ca7a9f4cf.jpeg",
     tittle: "Ac Repair Service",
-    price: "499 Rs",
+    price: "Rs 499 ",
     Introduction:
       "Our AC Repair Service ensures your air conditioner runs efficiently, providing optimal cooling and comfort. We deliver reliable, prompt solutions tailored to your needs.",
     Procedure: [
@@ -27,7 +27,7 @@ const data1 = [
   {
     img: "https://homemaster.in/upload/servicedetails/360_F_365479512_bboDY2fesAvMaUn8IOqj98kt07bMfWB7_(1).jpg",
     tittle: "Lite Ac  Service",
-    price: "399 Rs",
+    price: "Rs 399 ",
     Introduction:
       "Our Lite AC Service is a quick and cost-effective solution to maintain your air conditioner’s basic performance and cleanliness, ensuring hassle-free operation.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following:Lite AC Service is designed for routine maintenance to keep your air conditioner in good working condition. It is ideal for regular upkeep without the need for extensive repairs or in-depth cleaning, ensuring reliable performance between major services.",
@@ -52,7 +52,7 @@ const data1 = [
   {
     img: "https://homemaster.in/upload/servicedetails/088ef8d8-577d-44be-810f-d47c1e738c8c_.jpg",
     tittle: "Ac Installation",
-    price: "1500 Rs",
+    price: "Rs 1500 ",
     Introduction:
       "Our AC Installation Service ensures precise and efficient setup of your air conditioner for optimal cooling performance and energy efficiency.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following: Our skilled technicians provide seamless AC installation tailored to your space and requirements. We ensure proper alignment, leak-proof connections, and system efficiency for long-lasting cooling. Enjoy a hassle-free setup experience with our professional service.",
@@ -77,7 +77,7 @@ const data1 = [
   {
     img: "https://homemaster.in/upload/servicedetails/360_F_365479512_bboDY2fesAvMaUn8IOqj98kt07bMfWB7.jpg",
     tittle: "Power saving Ac Service",
-    price: "499 Rs",
+    price: "Rs 499 ",
     Introduction:
       "Our Power Saver AC Service optimizes your air conditioner for energy efficiency, helping you reduce electricity bills while maintaining peak performance.",
     Time: "2 to 6 hours, depending upon floor type and size Every time we clean, we'll provide services that include the following:Power Saver AC Service focuses on tuning your AC for maximum energy efficiency. By addressing airflow, cleaning key components, and optimizing refrigerant levels, we ensure your AC consumes less power without compromising on comfort. Ideal for households aiming to cut down on electricity costs.",

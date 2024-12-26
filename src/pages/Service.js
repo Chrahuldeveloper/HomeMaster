@@ -130,7 +130,7 @@ export default function Service() {
             <h1 className="text-2xl font-semibold">Our Prices:</h1>
             <div className="border-[1px] p-5 rounded-lg max-w-xs space-y-5 shadow-sm">
               <div>
-                <h1 className="text-lg">{servicedata.state.tittle} Services</h1>
+                <h1 className="text-lg">{servicedata.state.tittle}</h1>
               </div>
               <div className="flex items-center justify-around">
                 <h1>{servicedata.state.tittle}</h1>

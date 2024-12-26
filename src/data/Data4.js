@@ -2,7 +2,7 @@ const data4 = [
   {
     img: "https://homemaster.in/upload/subservices/1bhk.jpg",
     tittle: "1 BHK",
-    price: "4500 RS",
+    price: "Rs 4500 ",
     Introduction:
       "Clean House is pure bliss. In today’s busy world, it is difficult for everyone to take time for deep cleaning of their house. But when your cleaning partners are here, you don’t have to worry. We have expertise in providing deep cleaning to your house. We have trained, efficient, and trusted employees who understand the need of our customers and work accordingly. They are proficient in cleaning and scrubbing the floor in order to remove dirt from pores. They left no scope for stains and work their level best to restore the shine of the floor of your house.",
     Time: "We require two to six hours for cleaning your complete house. The total time will be depended on the type of floor and size of your house.Every time we clean, we'll provide services that include the following:There are a large number of services that we provide every time when you choose our services: ? We will remove cobwebs from your house. ? Thorough dusting of your house and furniture. ? Cleaning of floors. ? Cleaning of toilets. ? Cleaning of mirrors or chrome fixtures. ? Cleaning of Shower doors. ? Cleaning of tile walls.",
@@ -24,7 +24,7 @@ const data4 = [
   {
     img: "https://homemaster.in/upload/subservices/2BHK.jpg",
     tittle: "2 BHK",
-    price: "5500 RS",
+    price: "Rs 5500 ",
     Introduction:
       "Cleaning and scrubbing the floor focusing on dirt removal from pores, stain removal and restoring shine",
     Time: "2 hrs Every time we clean, we'll provide services that include the following:very time we clean, we'll provide services that include the following: Bathrooms Cobwebs removed, dusting, floors cleaned, toilets cleaned, mirrors / chrome fixtures cleaned, shower doors cleaned, tile walls, bathtub / showers cleaned Sleeping Areas Surfaces hand wiped, floors cleaned, general dusting, cobwebs removed, doors and door frames spot cleaned Living Areas Surfaces hand wiped, cobwebs removed, doors and door frames spot cleaned, general dusting, floors cleaned Kitchen Countertops cleaned, outside of range hood cleaned, top and front of range cleaned, drip pans / glass top surfaces wiped, sinks cleaned and chrome shined, fronts of all appliances cleaned, general dusting, cobwebs removed, microwave wiped out, doors and door frames spot cleaned",
@@ -45,7 +45,7 @@ const data4 = [
   {
     img: "https://homemaster.in/upload/subservices/3BHK.jpg",
     tittle: "3 BHK",
-    price: "6500 RS",
+    price: "Rs 6500 ",
     Introduction:
       "Cleaning and scrubbing the floor focusing on dirt removal from pores, stain removal and restoring shine",
     Time: "2 HRs Every time we clean, we'll provide services that include the following:Every time we clean, we'll provide services that include the following: Bathrooms Cobwebs removed, dusting, floors cleaned, toilets cleaned, mirrors / chrome fixtures cleaned, shower doors cleaned, tile walls, bathtub / showers cleaned Sleeping Areas Surfaces hand wiped, floors cleaned, general dusting, cobwebs removed, doors and door frames spot cleaned Living Areas Surfaces hand wiped, cobwebs removed, doors and door frames spot cleaned, general dusting, floors cleaned Kitchen Countertops cleaned, outside of range hood cleaned, top and front of range cleaned, drip pans / glass top surfaces wiped, sinks cleaned and chrome shined, fronts of all appliances cleaned, general dusting, cobwebs removed, microwave wiped out, doors and door frames spot cleaned",
@@ -228,7 +228,7 @@ const data4 = [
   {
     img: "https://t4.ftcdn.net/jpg/03/20/28/73/360_F_320287361_Cq6lb6COc1Wwd7gF1jUoGCz3Waq5mO8o.jpg",
     tittle: "Bathroom Cleaning",
-    price: "400 RS",
+    price: "Rs 450",
     Introduction:
       "Professional bathroom cleaning service to remove stains, mold, and ensure a hygienic space.",
     Time: "1 to 3 hours, depending on bathroom size and number.",
@@ -246,7 +246,7 @@ const data4 = [
   {
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoCNvSCgwH_PnO1Kbsz1GYnKWYYdrvxJtrnA&s",
     tittle: "Kitchen Cleaning",
-    price: "1200 RS",
+    price: "Rs 1200 ",
     Introduction:
       "Professional bathroom cleaning service to remove stains, mold, and ensure a hygienic space.",
     Time: "1 to 3 hours, depending on bathroom size and number.",
@@ -264,7 +264,7 @@ const data4 = [
   {
     img: "https://img.freepik.com/free-photo/full-shot-man-vacuuming-couch_23-2149482278.jpg?semt=ais_hybrid",
     tittle: "Sofa Cleaning",
-    price: "200 RS Per Set",
+    price: "Rs 200 Per Seat",
     Introduction:
       "Professional bathroom cleaning service to remove stains, mold, and ensure a hygienic space.",
     Time: "1 to 3 hours, depending on bathroom size and number.",
@@ -300,7 +300,7 @@ const data4 = [
   {
     img: "https://media.istockphoto.com/id/1150282133/photo/cleaning-window-pane-with-detergent.jpg?s=612x612&w=0&k=20&c=BkzVas8qZ_VLxLDWpDAPbVSDRXgRFMxbI3_NHcamUfk=",
     tittle: "Window  Cleaning",
-    price: "1800 RS",
+    price: "Rs 1800 ",
     Introduction:
       "Professional bathroom cleaning service to remove stains, mold, and ensure a hygienic space.",
     Time: "1 to 3 hours, depending on bathroom size and number.",

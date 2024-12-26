@@ -92,7 +92,15 @@ export default function Home() {
             <h1 className="text-[#545454] text-xl font-semibold">
               What are you looking for?
             </h1>
-            <div className="grid max-w-md grid-cols-2 gap-5 mt-1.5 border-gray-200 md:grid-cols-1 lg:grid-cols-3">
+            <div
+              data-aos="fade"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              data-aos-once="true"
+              className="grid max-w-md grid-cols-2 gap-5 mt-1.5 border-gray-200 md:grid-cols-1 lg:grid-cols-3"
+            >
               {data.map((i, id) => {
                 return (
                   <Link
@@ -122,7 +130,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
+        <div
+          data-aos="fade"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-once="true"
+        >
           <img
             className="max-w-xs mx-auto rounded-lg md:max-w-md"
             src={img1}

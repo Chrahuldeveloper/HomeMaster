@@ -63,7 +63,7 @@ export default function ServiceCards({
                       <p className="text-sm font-semibold text-gray-700">
                         {i.price === "On Inspection"
                           ? "On Inspection"
-                          : "Price" + " " + i.price + " " + "Rs"}
+                          : "Price" + " " + i.price}
                       </p>
                     </div>
                   )}

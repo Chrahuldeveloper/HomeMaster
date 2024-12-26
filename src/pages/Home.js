@@ -54,7 +54,7 @@ export default function Home() {
       para: "Track and manage your bookings, payments, and services effortlessly through our online platform.",
     },
   ];
-  
+
   const [showmenu, setshowmenu] = useState(false);
 
   const scrolltoTop = () => {

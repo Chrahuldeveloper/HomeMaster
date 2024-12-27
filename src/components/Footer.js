@@ -41,10 +41,10 @@ export default function Footer() {
             <h1 className="text-xl font-semibold">Location</h1>
             <ul className="mt-3 space-y-3">
               <li className="text-gray-700">
-                SR.no.14/2D,Sukhsagar Nagar,Katraj,Pune,411046 Maharashtra India
+                SR.no.14/2D,Sukhsagar Nagar,Katraj,Pune,411046 Maharashtra India{" "}
               </li>
               <li className="text-gray-700">
-                Mon-Fri: 9:00 am – 5:00 pm <br /> Sat-Sun: 11:00 am – 16:00 pm{" "}
+                Mon-Sat: 9:00 am – 6:00 pm <br /> Sun : 10:00 am – 2:00 pm{" "}
               </li>
             </ul>
           </div>

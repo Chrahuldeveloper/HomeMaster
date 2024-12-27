@@ -18,6 +18,7 @@ export default function Contact() {
   const [data, setdata] = useState({
     Name: "",
     email: "",
+    Phone : "",
     Service: "",
     message: "",
   });
@@ -67,6 +68,17 @@ export default function Contact() {
               value={data.email}
               onChange={(e) => {
                 setdata({ ...data, email: e.target.value });
+              }}
+              className="outline-none border-[1px] px-3 py-2 w-full  border-gray-300 bg-gray-50 rounded-lg mt-3"
+            />
+          </div>
+          <div>
+            <h1>Phone</h1>
+            <input
+              type="text"
+              value={data.Phone}
+              onChange={(e) => {
+                setdata({ ...data, Phone: e.target.value });
               }}
               className="outline-none border-[1px] px-3 py-2 w-full  border-gray-300 bg-gray-50 rounded-lg mt-3"
             />

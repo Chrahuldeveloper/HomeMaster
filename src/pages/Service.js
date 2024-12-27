@@ -134,7 +134,7 @@ export default function Service() {
               </div>
               <div className="flex items-center justify-around">
                 <h1>{servicedata.state.tittle}</h1>
-                <p className="text-gray-700">Rs: {servicedata.state.price}</p>
+                <p className="text-gray-700">{servicedata.state.price}</p>
               </div>
               <button
                 onClick={() => {

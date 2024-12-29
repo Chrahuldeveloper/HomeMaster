@@ -29,13 +29,14 @@ export default function Explore() {
     },
     {
       tittle: "Beauty & Services",
-      image: "https://imgmedia.lbb.in/media/2020/02/5e4d51ba6e343b1b20e148ec_1582125498852.jpg",
+      image:
+        "https://imgmedia.lbb.in/media/2020/02/5e4d51ba6e343b1b20e148ec_1582125498852.jpg",
     },
   ];
 
   return (
     <>
-      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} page={"explore"} hide="gallery" />
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} page={"explore"} />
       <div className="max-w-md my-20 rounded-lg md:max-w-lg mx-auto border-gray-300 border-[1px] p-5">
         <h1 className="pb-5 text-lg font-semibold ">Explore our Services</h1>
         <div className="grid grid-cols-2 gap-10 md:grid-cols-1 lg:grid-cols-3">

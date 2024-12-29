@@ -1,17 +1,23 @@
 import EmailJS from "../emailjs/Email";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const email = new EmailJS();
 
 class CheckOUT {
-  async SendEmail(UserEmail, Message) {
+  async SendEmail(UserEmail, Message, userId) {
     try {
       await email.sendLoginEmail(UserEmail, Message);
+      const userDocRef = doc(db, "USERS", userId);
+      await updateDoc(userDocRef, {
+        UserEmail: UserEmail,
+      });
     } catch (error) {
       console.log(error);
     }
   }
 
-  async getLocation() {
+  async getLocation(userId) {
     try {
       if (!navigator.geolocation) {
         throw new Error("Geolocation is not supported by your browser.");
@@ -34,7 +40,14 @@ class CheckOUT {
       const data = await response.json();
       console.log("User's address:", data.display_name);
 
-      return { address: data.display_name };
+      const userDocRef = doc(db, "USERS", userId);
+      await updateDoc(userDocRef, {
+        latitude: latitude,
+        longitude: longitude,
+        address: data.display_name,
+      });
+
+      return { latitude, longitude, address: data.display_name };
     } catch (error) {
       console.error("Error fetching location:", error);
       return null;

@@ -29,6 +29,8 @@ export default function CheckOut() {
   const [EnteredOTP, setEnteredOTP] = useState();
   const [genOTP, setgenOTP] = useState();
 
+  const [otpsent, setotpsent] = useState();
+
   const [toogleemail, settoogleemail] = useState(false);
 
   function generateOTP() {
@@ -43,9 +45,9 @@ export default function CheckOut() {
   const SendEmail = async () => {
     try {
       const OTP = generateOTP();
-      console.log(OTP);
       setgenOTP(OTP);
-      checkout.SendEmail(Email, OTP);
+      await checkout.SendEmail(Email, OTP);
+      setotpsent(true);
     } catch (error) {
       console.log(error);
     }
@@ -170,13 +172,13 @@ export default function CheckOut() {
             <p>{data.state.Price}</p>
           </div>
           <div className="flex justify-between mt-5">
-            <h1>Item Tax</h1>
-            <p>₹69</p>
+            <h1>Additional Cost</h1>
+            <p>0</p>
           </div>
 
           <div className="flex justify-between mt-8">
             <h1 className="font-semibold">Total</h1>
-            <p>{Number(data.state.Price) + 69}</p>
+            <p>{Number(data.state.Price) + 0}</p>
           </div>
           <div>
             <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
@@ -307,18 +309,23 @@ export default function CheckOut() {
             >
               Send OTP
             </button>
-            <h1 className="mt-3.5 text-lg font-semibold ">Enter OTP</h1>
-            <div>
-              <input
-                type="text"
-                placeholder="Email"
-                value={EnteredOTP}
-                onChange={(e) => {
-                  setEnteredOTP(e.target.value);
-                }}
-                className="outline-none border-[1px] px-3 py-2 w-full border-gray-300 rounded-lg mt-3"
-              />
-            </div>
+            {otpsent ? (
+              <>
+                <h1 className="mt-3.5 text-lg font-semibold ">Enter OTP</h1>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Enter 5 digit OTP"
+                    value={EnteredOTP}
+                    onChange={(e) => {
+                      setEnteredOTP(e.target.value);
+                    }}
+                    className="outline-none border-[1px] px-3 py-2 w-full border-gray-300 rounded-lg mt-3"
+                  />
+                </div>
+              </>
+            ) : null}
+
             {EnteredOTP?.length === 5 ? (
               <button
                 onClick={Verify}

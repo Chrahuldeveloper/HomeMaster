@@ -249,7 +249,7 @@ export default function CheckOut() {
               </div>
               <input
                 type="radio"
-                checked={selectedPayment === "cash"}
+                checked={selectedPayment === "Cash"}
                 readOnly
                 onClick={() => handlePaymentSelection("Cash")}
                 className="accent-violet-500"
@@ -265,7 +265,7 @@ export default function CheckOut() {
               </div>
               <input
                 type="radio"
-                checked={selectedPayment === "online"}
+                checked={selectedPayment === "Online"}
                 readOnly
                 onClick={() => handlePaymentSelection("Online")}
                 className="accent-violet-500"

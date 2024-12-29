@@ -18,7 +18,7 @@ export default function Contact() {
   const [data, setdata] = useState({
     Name: "",
     email: "",
-    Phone : "",
+    Phone: "",
     Service: "",
     message: "",
   });
@@ -26,7 +26,6 @@ export default function Contact() {
   console.log(loading);
 
   const [showmenu, setshowmenu] = useState(false);
-
 
   const services = [
     "Painting",
@@ -40,9 +39,7 @@ export default function Contact() {
   return (
     <>
       <ToastContainer />
-      <Navbar           showmenu={showmenu}
-          setshowmenu={setshowmenu}
- page={"contact"} />
+      <Navbar showmenu={showmenu} setshowmenu={setshowmenu} page={"contact"} />
       <div className="p-5">
         <div className="bg-white max-w-xl mx-auto my-10 border-[1px] rounded-lg p-5 border-gray-300 space-y-5 ">
           <div>

@@ -5,6 +5,8 @@ import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { MdMyLocation } from "react-icons/md";
+// import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+// import { auth } from "../Firebase";
 
 export default function CheckOut() {
   const [selectedPayment, setSelectedPayment] = useState(null);
@@ -17,13 +19,46 @@ export default function CheckOut() {
 
   const data = useLocation();
 
-  const [phone, setphone] = useState();
+  const [Email, setEmail] = useState();
 
   const [toggleaddress, settoggleaddress] = useState(false);
 
-  const [tooglephone, settooglephone] = useState(false);
+  const [toogleemail, settoogleemail] = useState(false);
 
-  console.log(data);
+  const SendEmail = () => {};
+
+  // const oncaptachaVerify = () => {
+  //   if (window.recaptchaVerifier) return;
+
+  //   window.recaptchaVerifier = new RecaptchaVerifier(
+  //     auth,
+  //     "recaptcha-container",
+  //     {
+  //       size: "invisible",
+  //       callback: () => {
+  //         console.log("recaptcha resolved..");
+  //       },
+  //     },
+  //     auth
+  //   );
+  // };
+
+  // const onSignInSubmit = () => {
+  //   try {
+  //     oncaptachaVerify();
+  //     const appVerifier = window.recaptchaVerifier;
+  //     const phoneformat = `+91 8317-680-338`;
+  //     signInWithPhoneNumber(auth, phoneformat, appVerifier)
+  //       .then((confirmationResult) => {
+  //         window.confirmationResult = confirmationResult;
+  //       })
+  //       .catch((error) => {
+  //         console.log(error.message);
+  //       });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <>
@@ -40,7 +75,7 @@ export default function CheckOut() {
               <h1 className="">Send booking details to</h1>
               <button
                 onClick={() => {
-                  settooglephone(true);
+                  settoogleemail(true);
                 }}
                 className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
               >
@@ -195,9 +230,10 @@ export default function CheckOut() {
         </div>
       ) : null}
 
-      {tooglephone ? (
+      {toogleemail ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
           <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+            <div id="recaptcha-container"></div>
             <div className="flex justify-end translate-x-4 -translate-y-16">
               <RxCross2
                 size={18}
@@ -205,25 +241,28 @@ export default function CheckOut() {
                 className="w-8 h-8 p-1 bg-white rounded-full"
                 cursor={"pointer"}
                 onClick={() => {
-                  settooglephone(false);
+                  settoogleemail(false);
                 }}
               />
             </div>
-            <h1 className="text-lg font-semibold -mt-7 ">
-              Enter Your Phone Number
+            <h1 className="text-lg font-semibold -mt-7 " id="recaptcha">
+              Enter Your Email
             </h1>
             <div>
               <input
                 type="text"
                 placeholder="Phone Number"
-                value={phone}
+                value={Email}
                 onChange={(e) => {
-                  setphone(e.target.value);
+                  setEmail(e.target.value);
                 }}
                 className="outline-none border-[1px] px-3 py-2 w-full border-gray-300 rounded-lg mt-3"
               />
             </div>
-            <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
+            <button
+              onClick={SendEmail}
+              className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4"
+            >
               Send OTP
             </button>
             <h1 className="mt-3.5 text-lg font-semibold ">Enter OTP</h1>

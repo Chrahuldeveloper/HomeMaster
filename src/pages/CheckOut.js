@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Footer, Navbar } from "../components";
 import { RxCross2 } from "react-icons/rx";
 import { BsCashStack } from "react-icons/bs";
@@ -6,11 +6,15 @@ import { IoIosPhonePortrait } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { MdMyLocation } from "react-icons/md";
 import CheckOUT from "../utils/CheckOut";
+import useAuth from "../hooks/CheckUser";
+import Loader from "../components/Loader";
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "../Firebase";
 
 export default function CheckOut() {
-  const checkout = new CheckOUT();
+  const checkout = useMemo(() => new CheckOUT(), []);
+
+  const { user, loading } = useAuth();
 
   const [selectedPayment, setSelectedPayment] = useState(null);
 
@@ -26,6 +30,7 @@ export default function CheckOut() {
 
   const [toggleaddress, settoggleaddress] = useState(false);
 
+  const [address, setaddress] = useState();
   const [EnteredOTP, setEnteredOTP] = useState();
   const [genOTP, setgenOTP] = useState();
 
@@ -46,7 +51,7 @@ export default function CheckOut() {
     try {
       const OTP = generateOTP();
       setgenOTP(OTP);
-      await checkout.SendEmail(Email, OTP);
+      await checkout.SendEmail(Email, OTP, user.uid);
       setotpsent(true);
     } catch (error) {
       console.log(error);
@@ -96,15 +101,29 @@ export default function CheckOut() {
 
   const getlocation = async () => {
     try {
-      const loc = await checkout.getLocation();
-      console.log(loc);
+      await checkout.getLocation(user.uid);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const getdetails = useCallback(async () => {
+    try {
+      const data = await checkout.fetchdetails(user.uid);
+      setaddress(data.address);
+      setEmail(data.email);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [checkout, user?.uid]);
+
+  useEffect(() => {
+    getdetails();
+  }, [getdetails]);
+
   return (
     <>
+      {loading ? <Loader /> : ""}
       <Navbar explore={false} />
       <div className="flex flex-col justify-center gap-8 p-5 my-14 md:flex-row lg:justify-evenly md:gap-0">
         <div className="border-[1px] border-gray-300 md:w-[60vw] lg:w-[30vw] rounded-lg shadow-sm">
@@ -115,15 +134,19 @@ export default function CheckOut() {
               alt=""
             />
             <div className="space-y-2">
-              <h1 className="">Send booking details to</h1>
-              <button
-                onClick={() => {
-                  settoogleemail(true);
-                }}
-                className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
-              >
-                +Add
-              </button>{" "}
+              <h1 className="font-bold">Send booking details to</h1>
+              {Email?.length === undefined ? (
+                <button
+                  onClick={() => {
+                    settoogleemail(true);
+                  }}
+                  className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
+                >
+                  +Add
+                </button>
+              ) : (
+                <h1 className="text-sm ">{Email}</h1>
+              )}
             </div>
           </div>
           <div className="flex gap-4 p-5 border-b-[1px] border-gray-300 cursor-pointer">
@@ -133,15 +156,19 @@ export default function CheckOut() {
               alt=""
             />
             <div className="space-y-2">
-              <h1 className="">Address</h1>
-              <button
-                onClick={() => {
-                  settoggleaddress(true);
-                }}
-                className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
-              >
-                +Add
-              </button>
+              <h1 className="font-bold">Address</h1>
+              {address === undefined ? (
+                <button
+                  onClick={() => {
+                    settoggleaddress(true);
+                  }}
+                  className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer"
+                >
+                  +Add
+                </button>
+              ) : (
+                <h1 className="text-sm ">{address}</h1>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-4 p-5 cursor-pointer">
@@ -156,7 +183,7 @@ export default function CheckOut() {
                 settoggle(true);
               }}
             >
-              <h1 className="">Payment Method</h1>
+              <h1 className="font-bold">Payment Method</h1>
               <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer">
                 +Add
               </button>

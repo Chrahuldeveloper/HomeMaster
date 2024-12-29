@@ -54,30 +54,19 @@ class CheckOUT {
     }
   }
 
+  async fetchdetails(userID) {
+    const userDocRef = doc(db, "USERS", userID);
+    const docSnap = await getDoc(userDocRef);
 
-
-
-
-
-
-  async fetchdetails(userID){
-        const userDocRef = doc(db, "USERS", userID);
-        const docSnap = await getDoc(userDocRef);
-
-        if (docSnap.exists()) {
-   
-          console.log(docSnap.latitude,docSnap.longitude,docSnap.address,docSnap.UserEmail)
-
-
-        }
-  
-  
+    if (docSnap.exists()) {
+      const address = docSnap.data().address;
+      const email = docSnap.data().UserEmail;
+      return {
+        address,
+        email,
+      };
+    }
   }
-
-
-
-
-
 }
 
 export default CheckOUT;

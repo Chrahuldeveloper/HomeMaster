@@ -184,9 +184,13 @@ export default function CheckOut() {
               }}
             >
               <h1 className="font-bold">Payment Method</h1>
-              <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer">
-                +Add
-              </button>
+              {selectedPayment === null ? (
+                <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full px-36 mx-auto py-2.5 mt-4 text-center cursor-pointer">
+                  +Add
+                </button>
+              ) : (
+                <h1 className="text-sm">{selectedPayment}</h1>
+              )}
             </div>
           </div>
         </div>
@@ -207,9 +211,10 @@ export default function CheckOut() {
             <h1 className="font-semibold">Total</h1>
             <p>{Number(data.state.Price) + 0}</p>
           </div>
+
           <div>
             <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
-              Pay
+              {selectedPayment === "Cash" ? "Book" : "Pay"}
             </button>
           </div>
         </div>
@@ -237,7 +242,7 @@ export default function CheckOut() {
             <div className="flex justify-between ">
               <div
                 className="flex items-center gap-4 my-5 cursor-pointer"
-                onClick={() => handlePaymentSelection("cash")}
+                onClick={() => handlePaymentSelection("Cash")}
               >
                 <BsCashStack size={20} color="black" />
                 <h1 className="text-sm ">Cash On Delivery</h1>
@@ -246,14 +251,14 @@ export default function CheckOut() {
                 type="radio"
                 checked={selectedPayment === "cash"}
                 readOnly
-                onClick={() => handlePaymentSelection("cash")}
+                onClick={() => handlePaymentSelection("Cash")}
                 className="accent-violet-500"
               />
             </div>
             <div className="flex justify-between ">
               <div
                 className="flex items-center gap-4 my-5 cursor-pointer"
-                onClick={() => handlePaymentSelection("online")}
+                onClick={() => handlePaymentSelection("Online")}
               >
                 <IoIosPhonePortrait size={20} color="black" />
                 <h1 className="text-sm ">Online Payment</h1>
@@ -262,7 +267,7 @@ export default function CheckOut() {
                 type="radio"
                 checked={selectedPayment === "online"}
                 readOnly
-                onClick={() => handlePaymentSelection("online")}
+                onClick={() => handlePaymentSelection("Online")}
                 className="accent-violet-500"
               />
             </div>

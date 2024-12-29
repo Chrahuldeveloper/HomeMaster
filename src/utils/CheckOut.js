@@ -1,5 +1,5 @@
 import EmailJS from "../emailjs/Email";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const email = new EmailJS();
@@ -53,6 +53,31 @@ class CheckOUT {
       return null;
     }
   }
+
+
+
+
+
+
+
+  async fetchdetails(userID){
+        const userDocRef = doc(db, "USERS", userID);
+        const docSnap = await getDoc(userDocRef);
+
+        if (docSnap.exists()) {
+   
+          console.log(docSnap.latitude,docSnap.longitude,docSnap.address,docSnap.UserEmail)
+
+
+        }
+  
+  
+  }
+
+
+
+
+
 }
 
 export default CheckOUT;

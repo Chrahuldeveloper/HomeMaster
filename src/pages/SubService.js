@@ -23,7 +23,7 @@ export default function SubService() {
   };
 
   const data = serviceDataMap[selectedService] || [];
-
+console.log(data)
   const [showmenu, setshowmenu] = useState(false);
   const [selectedTittle, setselectedTittle] = useState();
 

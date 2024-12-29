@@ -1,11 +1,11 @@
+import EmailJS from "../emailjs/Email";
+
+const email = new EmailJS();
+
 class CheckOUT {
-  async SendEmail() {
+  async SendEmail( UserEmail, Message) {
     try {
-
-      
-
-
-
+      await email.sendLoginEmail( UserEmail, Message);
     } catch (error) {
       console.log(error);
     }
@@ -13,10 +13,6 @@ class CheckOUT {
 
   async getLocation() {
     try {
-
-
-
-
     } catch (error) {
       console.log(error);
     }

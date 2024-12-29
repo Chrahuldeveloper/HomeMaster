@@ -5,10 +5,13 @@ import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { MdMyLocation } from "react-icons/md";
+import CheckOUT from "../utils/CheckOut";
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "../Firebase";
 
 export default function CheckOut() {
+  const checkout = new CheckOUT();
+
   const [selectedPayment, setSelectedPayment] = useState(null);
 
   const handlePaymentSelection = (method) => {
@@ -23,9 +26,38 @@ export default function CheckOut() {
 
   const [toggleaddress, settoggleaddress] = useState(false);
 
+  const [EnteredOTP, setEnteredOTP] = useState();
+  const [genOTP, setgenOTP] = useState();
+
   const [toogleemail, settoogleemail] = useState(false);
 
-  const SendEmail = () => {};
+  function generateOTP() {
+    let otp = "";
+    const characters = "0123456789";
+    for (let i = 0; i < 5; i++) {
+      otp += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return otp;
+  }
+
+  const SendEmail = async () => {
+    try {
+      const OTP = generateOTP();
+      console.log(OTP);
+      setgenOTP(OTP);
+      checkout.SendEmail(Email, OTP);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const Verify = () => {
+    if (genOTP === EnteredOTP) {
+      alert("Verifed");
+    } else {
+      alert("Not Verifed");
+    }
+  };
 
   // const oncaptachaVerify = () => {
   //   if (window.recaptchaVerifier) return;
@@ -216,7 +248,7 @@ export default function CheckOut() {
                 }}
               />
             </div>
-            <h1 className="text-lg font-semibold -mt-7 ">Enter Your Address</h1>
+            <h1 className="text-lg font-semibold -mt-7">Enter Your Address</h1>
             <div>
               <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4 flex items-center gap-3  justify-center">
                 <MdMyLocation size={24} color={"white"} />
@@ -245,13 +277,11 @@ export default function CheckOut() {
                 }}
               />
             </div>
-            <h1 className="text-lg font-semibold -mt-7 " id="recaptcha">
-              Enter Your Email
-            </h1>
+            <h1 className="text-lg font-semibold -mt-7">Enter Your Email</h1>
             <div>
               <input
                 type="text"
-                placeholder="Phone Number"
+                placeholder="Email"
                 value={Email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -266,28 +296,22 @@ export default function CheckOut() {
               Send OTP
             </button>
             <h1 className="mt-3.5 text-lg font-semibold ">Enter OTP</h1>
-            <div className="flex items-center justify-center gap-4 mt-4">
+            <div>
               <input
-                type="number"
-                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
-              />
-              <input
-                type="number"
-                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
-              />
-              <input
-                type="number"
-                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
-              />
-              <input
-                type="number"
-                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
-              />
-              <input
-                type="number"
-                className="border-[1px] border-gray-300 w-10 h-10 rounded-lg text-center outline-none"
+                type="text"
+                placeholder="Email"
+                value={EnteredOTP}
+                onChange={(e) => {
+                  setEnteredOTP(e.target.value);
+                }}
+                className="outline-none border-[1px] px-3 py-2 w-full border-gray-300 rounded-lg mt-3"
               />
             </div>
+            {EnteredOTP?.length === 5 ? (
+              <button onClick={Verify} className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
+                Verify OTP
+              </button>
+            ) : null}
           </div>
         </div>
       ) : null}

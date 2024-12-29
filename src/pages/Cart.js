@@ -78,12 +78,12 @@ export default function Cart() {
                     <div className="border-[0.1px] border-dashed border-gray-200 w-full"></div>
 
                     <div className="flex items-center w-full gap-3">
-                      <Link
+                      <div
                         to={"/"}
                         className="border-black border-[1px] text-sm rounded-lg text-black font-semibold w-full mx-auto py-2 mt-4 text-center"
                       >
-                        <button>Add Service</button>
-                      </Link>
+                        <button>Remove</button>
+                      </div>
                       <Link
                         to={"/checkout"}
                         state={{

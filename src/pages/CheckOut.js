@@ -92,6 +92,15 @@ export default function CheckOut() {
   //   }
   // };
 
+  const getlocation = async () => {
+    try {
+      const loc = await checkout.getLocation();
+      console.log(loc);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Navbar explore={false} />
@@ -250,7 +259,10 @@ export default function CheckOut() {
             </div>
             <h1 className="text-lg font-semibold -mt-7">Enter Your Address</h1>
             <div>
-              <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4 flex items-center gap-3  justify-center">
+              <button
+                onClick={getlocation}
+                className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4 flex items-center gap-3  justify-center"
+              >
                 <MdMyLocation size={24} color={"white"} />
                 <h1>Use Location</h1>
               </button>
@@ -308,7 +320,10 @@ export default function CheckOut() {
               />
             </div>
             {EnteredOTP?.length === 5 ? (
-              <button onClick={Verify} className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
+              <button
+                onClick={Verify}
+                className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4"
+              >
                 Verify OTP
               </button>
             ) : null}

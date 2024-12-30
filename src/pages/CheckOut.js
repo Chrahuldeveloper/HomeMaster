@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Footer, Navbar } from "../components";
+import { Footer, Navbar, TermsConditions } from "../components";
 import { RxCross2 } from "react-icons/rx";
 import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
@@ -37,6 +37,8 @@ export default function CheckOut() {
   const [otpsent, setotpsent] = useState();
 
   const [toogleemail, settoogleemail] = useState(false);
+
+  const [toogleterms, settoogleterms] = useState(false);
 
   function generateOTP() {
     let otp = "";
@@ -217,9 +219,21 @@ export default function CheckOut() {
               {selectedPayment === "Cash" ? "Book" : "Pay"}
             </button>
           </div>
+          <div className="mt-5">
+            <h1
+              onClick={() => {
+                settoogleterms(true);
+              }}
+              className="text-sm font-semibold text-center cursor-pointer"
+            >
+              Terms & Conditions
+            </h1>
+          </div>
         </div>
       </div>
       <Footer />
+
+      {toogleterms ? <TermsConditions settoogleterms={settoogleterms} /> : null}
 
       {toggle ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">

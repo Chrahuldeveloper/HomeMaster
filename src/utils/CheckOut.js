@@ -54,6 +54,13 @@ class CheckOUT {
     }
   }
 
+  async payment() {
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async fetchdetails(userID) {
     const userDocRef = doc(db, "USERS", userID);
     const docSnap = await getDoc(userDocRef);

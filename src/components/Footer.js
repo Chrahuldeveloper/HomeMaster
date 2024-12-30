@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiInstagram } from "react-icons/ci";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import logo from "../../src/images/logo.png";
 import { Link } from "react-router-dom";
+import TermsConditions from "./TermsConditions";
 export default function Footer() {
+  const [toggle, settoggle] = useState(false);
+
   return (
     <>
+      {toggle ? <TermsConditions settoogleterms={settoggle} /> : null}
       <footer className="bg-[#f5f5f5] md:h-[60vh] p-10 text-center">
         <div className="pr-4 lg:px-44">
           <img
@@ -25,6 +29,14 @@ export default function Footer() {
               </li>
               <li className="text-gray-700">
                 <Link to="/contact">Reach Out</Link>
+              </li>
+              <li
+                className="text-gray-700"
+                onClick={() => {
+                  settoggle(true);
+                }}
+              >
+                Terms & Conditions
               </li>
             </ul>
           </div>

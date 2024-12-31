@@ -80,6 +80,12 @@ export default function Cart() {
                     <div className="flex items-center w-full gap-3">
                       <div
                         to={"/"}
+                        onClick={() => {
+                          products.deleteItem(user.uid, id);
+                          setProducts((prevProducts) =>
+                            prevProducts.filter((_, index) => index !== id)
+                          );
+                        }}
                         className="border-black border-[1px] text-sm rounded-lg text-black font-semibold w-full mx-auto py-2 mt-4 text-center"
                       >
                         <button>Remove</button>

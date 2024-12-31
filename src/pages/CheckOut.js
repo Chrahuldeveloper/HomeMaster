@@ -8,6 +8,7 @@ import { MdMyLocation } from "react-icons/md";
 import CheckOUT from "../utils/CheckOut";
 import useAuth from "../hooks/CheckUser";
 import Loader from "../components/Loader";
+import ProductCart from "../utils/Cart";
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "../Firebase";
 
@@ -31,7 +32,9 @@ export default function CheckOut() {
   const [toggleaddress, settoggleaddress] = useState(false);
 
   const [address, setaddress] = useState();
+
   const [EnteredOTP, setEnteredOTP] = useState();
+
   const [genOTP, setgenOTP] = useState();
 
   const [otpsent, setotpsent] = useState();
@@ -109,6 +112,8 @@ export default function CheckOut() {
     }
   };
 
+  const products = useMemo(() => new ProductCart(), []);
+
   const getdetails = useCallback(async () => {
     try {
       const data = await checkout.fetchdetails(user.uid);
@@ -123,11 +128,31 @@ export default function CheckOut() {
     getdetails();
   }, [getdetails]);
 
+  const [count, setcount] = useState(0);
+  const [isloading, setisloading] = useState(true);
+
+  useEffect(() => {
+    if (!user?.uid) return;
+    const fetchCartProducts = async () => {
+      try {
+        const data = await products.fetchProducts(user.uid);
+        console.log(data);
+        setcount(data.length);
+        setisloading(false);
+      } catch (error) {
+        console.error(error);
+        setisloading(false);
+      }
+    };
+    fetchCartProducts();
+  }, [products, user?.uid]);
+
   return (
     <>
       {loading ? <Loader /> : ""}
-      <Navbar explore={false} />
+      {isloading ? <Loader /> : <Navbar explore={false} newcount={count} />}
       <div className="flex flex-col justify-center gap-8 p-5 my-14 md:flex-row lg:justify-evenly md:gap-0">
+        {data.state.updatedcount}
         <div className="border-[1px] border-gray-300 md:w-[60vw] lg:w-[30vw] rounded-lg shadow-sm">
           <div className="flex gap-4 p-5 border-b-[1px] border-gray-300 cursor-pointer">
             <img

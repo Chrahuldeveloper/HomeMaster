@@ -17,6 +17,7 @@ export default function Cart() {
 
   console.log(loading);
 
+
   useEffect(() => {
     if (!user?.uid) return;
     const fetchCartProducts = async () => {
@@ -32,6 +33,27 @@ export default function Cart() {
     };
     fetchCartProducts();
   }, [products, user?.uid]);
+
+  const handleRemove = (id) => {
+    products.deleteItem(user.uid, id);
+    setProducts((prevProducts) =>
+      prevProducts.filter((_, index) => index !== id)
+    );
+  };
+
+  const handleCheckout = (i, id) => {
+    products.deleteItem(user.uid, id);
+    setProducts((prevProducts) =>
+      prevProducts.filter((_, index) => index !== id)
+    );
+
+    navigate("/checkout", {
+      state: {
+        Price: i.Price,
+        Name: i.Name,
+      },
+    });
+  };
 
   return (
     <div className="">
@@ -80,26 +102,17 @@ export default function Cart() {
                     <div className="flex items-center w-full gap-3">
                       <div
                         to={"/"}
-                        onClick={() => {
-                          products.deleteItem(user.uid, id);
-                          setProducts((prevProducts) =>
-                            prevProducts.filter((_, index) => index !== id)
-                          );
-                        }}
+                        onClick={() => handleRemove(id)}
                         className="border-black border-[1px] text-sm rounded-lg text-black font-semibold w-full mx-auto py-2 mt-4 text-center"
                       >
                         <button>Remove</button>
                       </div>
-                      <Link
-                        to={"/checkout"}
-                        state={{
-                          Price: i.Price,
-                          Name: i.Name,
-                        }}
+                      <div
+                        onClick={() => handleCheckout(i, id)}
                         className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full  mx-auto py-2.5 mt-4 text-center cursor-pointer  "
                       >
                         <button>CheckOut</button>
-                      </Link>
+                      </div>
                     </div>
                   </>
                 </React.Fragment>

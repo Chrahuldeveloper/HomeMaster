@@ -19,12 +19,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../Firebase";
 import { MdHome } from "react-icons/md";
 
-export default function Navbar({
-  showmenu,
-  setshowmenu,
-  page,
-  scrollToGallery,
-}) {
+export default function Navbar({ showmenu, setshowmenu, page,newcount }) {
   const notify = () => toast.success("Login Successfully!");
   const notify1 = () => toast.success("Logout Successfully!");
   const products = useMemo(() => new ProductCart(), []);
@@ -49,7 +44,7 @@ export default function Navbar({
       }
     };
     fetchCartProducts();
-  }, [products, user?.uid]);
+  }, [products, user?.uid,page]);
 
   const [istoggle, setistoggle] = useState(false);
 
@@ -131,7 +126,8 @@ export default function Navbar({
             <Link to="/cart">
               {count && user ? (
                 <div className="absolute flex items-center justify-center w-4 h-4 p-3 text-center text-white translate-x-3 bg-red-500 rounded-full top-7">
-                  <h1 className="text-[11px]">{count}</h1>
+                  {/* <h1 className="text-[11px]">{count}</h1> */}
+                  <h1 className="text-[11px]">{newcount}</h1>
                 </div>
               ) : null}
               <MdOutlineShoppingCart

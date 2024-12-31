@@ -17,7 +17,6 @@ export default function About() {
           showmenu={showmenu}
           setshowmenu={setshowmenu}
           page={"About"}
-          hide="gallery"
         />
         <div className="flex flex-col gap-6 p-5 my-10 md:flex-row md:justify-evenly md:gap-0">
           <div>

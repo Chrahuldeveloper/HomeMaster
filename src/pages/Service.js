@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Footer, Navbar } from "../components";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ProductCart from "../utils/Cart";
 import useAuth from "../hooks/CheckUser";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,8 +12,6 @@ export default function Service() {
   const servicedata = useLocation();
 
   const cart = new ProductCart();
-
-  const { id } = useParams();
 
   const { user, loading } = useAuth();
 
@@ -31,9 +29,8 @@ export default function Service() {
     window.scroll(0, 0);
   }, []);
 
+  console.log();
 
-  console.log()
-  
   return (
     <div>
       <ToastContainer />
@@ -146,7 +143,6 @@ export default function Service() {
                       Name: servicedata.state.tittle,
                       Price: servicedata.state.price,
                       img: servicedata.state.banner,
-                      serviceType: id,
                     });
                     navigate("/cart");
                   } else {

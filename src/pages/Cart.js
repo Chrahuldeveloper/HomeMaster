@@ -71,7 +71,7 @@ export default function Cart() {
                           <span className="font-semibold ">{i.Price}</span>
                         </p>
                         <p className="text-xs font-semibold text-gray-500">
-                          • {i.serviceType} X 1
+                          • {i.Name} x 1
                         </p>
                       </div>
                     </div>

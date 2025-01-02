@@ -9,6 +9,8 @@ import CheckOUT from "../utils/CheckOut";
 import useAuth from "../hooks/CheckUser";
 import Loader from "../components/Loader";
 import ProductCart from "../utils/Cart";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../Firebase";
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "../Firebase";
 
@@ -147,6 +149,33 @@ export default function CheckOut() {
     fetchCartProducts();
   }, [products, user?.uid]);
 
+  const BookSlot = async () => {
+    try {
+      if (selectedPayment === "Cash") {
+        const userDocRef = doc(db, "USERS", user.uid);
+        const docSnap = await getDoc(userDocRef);
+        if (docSnap.exists()) {
+          const docdata = docSnap.data();
+
+          const order = {
+            serviceName: data.state.Name,
+            price: data.state.Price,
+            paymentMethod: "Cash",
+            timestamp: new Date().toISOString(),
+          };
+
+          const updatedOrders = [...(docdata.orders || []), order];
+
+          await updateDoc(userDocRef, { orders: updatedOrders });
+        } else {
+          alert("NO Account Found!");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       {loading ? <Loader /> : ""}
@@ -225,22 +254,25 @@ export default function CheckOut() {
         <div className="border-[1px] border-gray-300 md:w-[60vw] lg:w-[30vw] p-6 rounded-lg shadow-sm">
           <h1 className="mt-5 text-lg font-bold">Payment summary</h1>
 
-          <div className="flex justify-between mt-5">
-            <h1>Item Price</h1>
+          <div className="flex justify-between mt-5 text-sm">
+            <h1>Service Name</h1>
+            <p>{data.state.Name}</p>
+          </div>
+          <div className="flex justify-between mt-5 text-sm">
+            <h1>Service Price</h1>
             <p>{data.state.Price}</p>
           </div>
-          <div className="flex justify-between mt-5">
-            <h1>Additional Cost</h1>
-            <p>0</p>
-          </div>
 
-          <div className="flex justify-between mt-8">
+          <div className="flex justify-between mt-8 text-sm">
             <h1 className="font-semibold">Total</h1>
-            <p>{Number(data.state.Price) + 0}</p>
+            <p> {data.state.Price}</p>
           </div>
 
           <div>
-            <button className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4">
+            <button
+              onClick={BookSlot}
+              className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4"
+            >
               {selectedPayment === "Cash" ? "Book" : "Pay"}
             </button>
           </div>

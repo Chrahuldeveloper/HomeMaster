@@ -29,8 +29,6 @@ export default function Service() {
     window.scroll(0, 0);
   }, []);
 
-  console.log();
-
   return (
     <div>
       <ToastContainer />

@@ -3,7 +3,7 @@ import { Footer, Navbar, TermsConditions } from "../components";
 import { RxCross2 } from "react-icons/rx";
 import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { MdMyLocation } from "react-icons/md";
 import CheckOUT from "../utils/CheckOut";
 import useAuth from "../hooks/CheckUser";
@@ -11,11 +11,16 @@ import Loader from "../components/Loader";
 import ProductCart from "../utils/Cart";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../Firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "../Firebase";
 
 export default function CheckOut() {
   const checkout = useMemo(() => new CheckOUT(), []);
+
+  const notify = () => toast.success("Order Placed SucessFully");
 
   const { user, loading } = useAuth();
 
@@ -44,6 +49,8 @@ export default function CheckOut() {
   const [toogleemail, settoogleemail] = useState(false);
 
   const [toogleterms, settoogleterms] = useState(false);
+
+  const navigate = useNavigate();
 
   function generateOTP() {
     let otp = "";
@@ -180,6 +187,8 @@ export default function CheckOut() {
           const updatedOrders = [...(docdata.orders || []), order];
 
           await updateDoc(userDocRef, { orders: updatedOrders });
+          notify();
+          navigate("/");
         } else {
           alert("NO Account Found!");
         }
@@ -191,6 +200,7 @@ export default function CheckOut() {
 
   return (
     <>
+      <ToastContainer />
       {loading ? <Loader /> : ""}
       {isloading ? <Loader /> : <Navbar explore={false} newcount={count} />}
       <div className="flex flex-col justify-center gap-8 p-5 my-14 md:flex-row lg:justify-evenly md:gap-0">

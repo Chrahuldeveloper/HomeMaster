@@ -18,8 +18,8 @@ export default function ModelLogin({ setlogintoggle, notify }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
-      <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl">
+    <div  className="fixed inset-0 z-50 flex items-center justify-center h-full bg-black bg-opacity-75 backdrop-blur-md">
+      <div className="bg-white w-[89vw] md:w-[60vw] lg:w-[40vw] xl:w-[30vw] p-5 rounded-xl ">
         <div className="flex justify-end translate-x-4 -translate-y-16">
           <RxCross2
             size={18}

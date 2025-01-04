@@ -6,12 +6,15 @@ import { CiLinkedin } from "react-icons/ci";
 import logo from "../../src/images/logo.png";
 import { Link } from "react-router-dom";
 import TermsConditions from "./TermsConditions";
+import Privacy from "./Privacy";
 export default function Footer() {
   const [toggle, settoggle] = useState(false);
+  const [togglePrivacy, settogglePrivacy] = useState(false);
 
   return (
     <>
       {toggle ? <TermsConditions settoogleterms={settoggle} /> : null}
+      {togglePrivacy ? <Privacy settogglePrivacy={settogglePrivacy} /> : null}
       <footer className="bg-[#f5f5f5] md:h-[60vh] p-10 text-center">
         <div className="pr-4 lg:px-44">
           <img
@@ -29,6 +32,14 @@ export default function Footer() {
               </li>
               <li className="text-gray-700">
                 <Link to="/contact">Reach Out</Link>
+              </li>
+              <li
+                className="text-gray-700 cursor-pointer"
+                onClick={() => {
+                  settogglePrivacy(true);
+                }}
+              >
+                <h1>Privacy Policy</h1>
               </li>
               <li
                 className="text-gray-700"

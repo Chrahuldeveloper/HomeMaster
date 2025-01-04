@@ -157,11 +157,24 @@ export default function CheckOut() {
         if (docSnap.exists()) {
           const docdata = docSnap.data();
 
+          const timestamp = new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+          }).format(new Date());
+
           const order = {
             serviceName: data.state.Name,
             price: data.state.Price,
             paymentMethod: "Cash",
-            timestamp: new Date().toISOString(),
+            timestamp: timestamp,
+            UserEmail: docdata.UserEmail,
+            UserAddress: docdata.address,
+            UserLat: docdata.latitude,
+            UserLong: docdata.longitude,
           };
 
           const updatedOrders = [...(docdata.orders || []), order];

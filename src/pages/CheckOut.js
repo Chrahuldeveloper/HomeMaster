@@ -3,7 +3,7 @@ import { Footer, Navbar, TermsConditions } from "../components";
 import { RxCross2 } from "react-icons/rx";
 import { BsCashStack } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { MdMyLocation } from "react-icons/md";
 import CheckOUT from "../utils/CheckOut";
 import useAuth from "../hooks/CheckUser";
@@ -24,8 +24,6 @@ export default function CheckOut() {
 
   const { user, loading } = useAuth();
 
-  const [selectedPayment, setSelectedPayment] = useState(null);
-
   const handlePaymentSelection = (method) => {
     setSelectedPayment(selectedPayment === method ? null : method);
   };
@@ -33,6 +31,10 @@ export default function CheckOut() {
   const [toggle, settoggle] = useState(false);
 
   const data = useLocation();
+
+  const [selectedPayment, setSelectedPayment] = useState(
+    data.state.Price === "On Inspection" ? "Cash" : null
+  );
 
   const [Email, setEmail] = useState();
 
@@ -49,8 +51,6 @@ export default function CheckOut() {
   const [toogleemail, settoogleemail] = useState(false);
 
   const [toogleterms, settoogleterms] = useState(false);
-
-  const navigate = useNavigate();
 
   function generateOTP() {
     let otp = "";
@@ -158,7 +158,7 @@ export default function CheckOut() {
 
   const BookSlot = async () => {
     try {
-      if (selectedPayment === "Cash") {
+      if (selectedPayment === "Cash" || data.state.Price === "On Inspection") {
         const userDocRef = doc(db, "USERS", user.uid);
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
@@ -188,7 +188,6 @@ export default function CheckOut() {
 
           await updateDoc(userDocRef, { orders: updatedOrders });
           notify();
-          navigate("/");
         } else {
           alert("NO Account Found!");
         }
@@ -296,7 +295,11 @@ export default function CheckOut() {
               onClick={BookSlot}
               className=" bg-[#6e42e5] ease-in-out duration-300 border-violet-500 border-[1px] text-sm rounded-lg text-white font-semibold w-full mx-auto py-2.5 mt-4"
             >
-              {selectedPayment === "Cash" ? "Book" : "Pay"}
+              {selectedPayment === "Cash"
+                ? "Book"
+                : data.state.Price === "On Inspection"
+                ? "Book"
+                : "Pay"}
             </button>
           </div>
           <div className="mt-5">
@@ -334,26 +337,23 @@ export default function CheckOut() {
             </h1>
             <div className="border-b-[1px] border-gray-300 mt-3"></div>
             <div className="flex justify-between ">
-              <div
-                className="flex items-center gap-4 my-5 cursor-pointer"
-                onClick={() => handlePaymentSelection("Cash")}
-              >
+              <div className="flex items-center gap-4 my-5 cursor-pointer">
                 <BsCashStack size={20} color="black" />
                 <h1 className="text-sm ">Cash On Delivery</h1>
               </div>
               <input
                 type="radio"
-                checked={selectedPayment === "Cash"}
+                checked={
+                  selectedPayment === "Cash" ||
+                  data.state.Price === "On Inspection"
+                }
                 readOnly
                 onClick={() => handlePaymentSelection("Cash")}
                 className="accent-violet-500"
               />
             </div>
             <div className="flex justify-between ">
-              <div
-                className="flex items-center gap-4 my-5 cursor-pointer"
-                onClick={() => handlePaymentSelection("Online")}
-              >
+              <div className="flex items-center gap-4 my-5 cursor-pointer">
                 <IoIosPhonePortrait size={20} color="black" />
                 <h1 className="text-sm ">Online Payment</h1>
               </div>
@@ -363,6 +363,7 @@ export default function CheckOut() {
                 readOnly
                 onClick={() => handlePaymentSelection("Online")}
                 className="accent-violet-500"
+                disabled={data.state.Price === "On Inspection"}
               />
             </div>
           </div>

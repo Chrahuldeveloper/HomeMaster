@@ -17,7 +17,6 @@ export default function Cart() {
 
   console.log(loading);
 
-
   useEffect(() => {
     if (!user?.uid) return;
     const fetchCartProducts = async () => {

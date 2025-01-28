@@ -13,7 +13,6 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // import { auth } from "../Firebase";
 
@@ -33,7 +32,10 @@ export default function CheckOut() {
   const data = useLocation();
 
   const [selectedPayment, setSelectedPayment] = useState(
-    data.state.Price === "On Inspection" ? "Cash" : null
+    data.state.Price === "On Inspection" ||
+      /^Starts Rs \d+ Per Sqft$/.test(data.state.Price)
+      ? "Cash"
+      : null
   );
 
   const [Email, setEmail] = useState();
@@ -79,6 +81,8 @@ export default function CheckOut() {
       alert("Not Verifed");
     }
   };
+
+  console.log(data.state.Price);
 
   // const oncaptachaVerify = () => {
   //   if (window.recaptchaVerifier) return;
@@ -156,7 +160,7 @@ export default function CheckOut() {
     fetchCartProducts();
   }, [products, user?.uid]);
 
-  const BookSlot = async () => {
+  const BookSlot = async (e) => {
     try {
       if (selectedPayment === "Cash" || data.state.Price === "On Inspection") {
         const userDocRef = doc(db, "USERS", user.uid);
@@ -191,6 +195,72 @@ export default function CheckOut() {
         } else {
           alert("NO Account Found!");
         }
+      } else {
+        const response = await fetch("http://localhost:5000/order", {
+          method: "POST",
+          body: JSON.stringify({
+            amount: parseInt(data.state.Price.replace("Rs ", "")) * 100,
+            currency: "INR",
+            receipt: "qwsaq1",
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const order = await response.json();
+        console.log(order);
+
+        var options = {
+          key: "rzp_live_i2gDh0i5XmpOAi",
+          amount: parseInt(data.state.Price.replace("Rs ", "")),
+          currency: "INR",
+          name: "JaledSeva",
+          description: "Home services at your doorstep",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/app-2-d919d.appspot.com/o/website_logos%2FJalad%20Seva.png?alt=media&token=733510d9-f354-43c0-9562-a9c21f4c5ff1",
+          order_id: order.id,
+          handler: async function (response) {
+            const body = {
+              ...response,
+            };
+
+            const validateRes = await fetch(
+              "http://localhost:5000/order/validate",
+              {
+                method: "POST",
+                body: JSON.stringify(body),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+            await validateRes.json();
+          },
+          prefill: {
+            name: "JaladSeva",
+            email: "jaladseva@gmail.com",
+            contact: "8622949494",
+          },
+          notes: {
+            address:
+              "SR.no.14/2D,Sukhsagar Nagar,Katraj,Pune,411046 Maharashtra India",
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+        var rzp1 = new window.Razorpay(options);
+        rzp1.on("payment.failed", function (response) {
+          alert(response.error.code);
+          alert(response.error.description);
+          alert(response.error.source);
+          alert(response.error.step);
+          alert(response.error.reason);
+          alert(response.error.metadata.order_id);
+          alert(response.error.metadata.payment_id);
+        });
+        rzp1.open();
+        e.preventDefault();
       }
     } catch (error) {
       console.log(error);

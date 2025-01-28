@@ -33,21 +33,15 @@ export default function Footer() {
               <li className="text-gray-700">
                 <Link to="/contact">Reach Out</Link>
               </li>
-              <li
-                className="text-gray-700 cursor-pointer"
-                onClick={() => {
-                  settogglePrivacy(true);
-                }}
-              >
-                <h1>Privacy Policy</h1>
+              <li className="text-gray-700 cursor-pointer">
+                <Link to="https://merchant.razorpay.com/policy/PbnF3rvHcnEUnw/privacy">
+                  <h1>Privacy Policy</h1>
+                </Link>
               </li>
-              <li
-                className="text-gray-700"
-                onClick={() => {
-                  settoggle(true);
-                }}
-              >
-                Terms & Conditions
+              <li className="text-gray-700">
+                <Link to="https://merchant.razorpay.com/policy/PbnF3rvHcnEUnw/terms">
+                  Terms & Conditions
+                </Link>
               </li>
             </ul>
           </div>

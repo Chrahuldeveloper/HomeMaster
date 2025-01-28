@@ -3,7 +3,6 @@ import { CgProfile } from "react-icons/cg";
 import { IoLocationOutline } from "react-icons/io5";
 import ModelLogin from "./ModelLogin";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import logo from "../../src/images/logo.png";
 import { CiMenuFries } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import { FaRegCompass } from "react-icons/fa";
@@ -19,7 +18,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../Firebase";
 import { MdHome } from "react-icons/md";
 
-export default function Navbar({ showmenu, setshowmenu, page,newcount }) {
+export default function Navbar({ showmenu, setshowmenu, page, newcount }) {
   const notify = () => toast.success("Login Successfully!");
   const notify1 = () => toast.success("Logout Successfully!");
   const products = useMemo(() => new ProductCart(), []);
@@ -44,7 +43,7 @@ export default function Navbar({ showmenu, setshowmenu, page,newcount }) {
       }
     };
     fetchCartProducts();
-  }, [products, user?.uid,page]);
+  }, [products, user?.uid, page]);
 
   const [istoggle, setistoggle] = useState(false);
 
@@ -68,12 +67,18 @@ export default function Navbar({ showmenu, setshowmenu, page,newcount }) {
     <>
       <ToastContainer />
       {Loading ? <Loader /> : null}
-      <nav className="border-b-[1px] border-gray-300 p-4">
+      <nav className="border-b-[1px] border-gray-300 ">
         <div className="flex items-center justify-between gap-5 px-6 md:justify-around">
           <div className="flex items-center gap-8">
             <div>
               <Link to={"/"}>
-                <img src={logo} alt="" className="w-20 h-20 " />
+                <img
+                  src={
+                    "https://firebasestorage.googleapis.com/v0/b/app-2-d919d.appspot.com/o/website_logos%2FJalad%20Seva.png?alt=media&token=733510d9-f354-43c0-9562-a9c21f4c5ff1"
+                  }
+                  alt=""
+                  className="h-28 w-28 "
+                />
               </Link>
             </div>
             <ul className="text-[#545454] text-sm  md:flex items-center gap-6 hidden ">
@@ -201,7 +206,13 @@ export default function Navbar({ showmenu, setshowmenu, page,newcount }) {
             </div>
             <div className="flex flex-col pl-8">
               <Link to="/">
-                <img src={logo} alt="" className="w-20 h-20 " />
+                <img
+                  src={
+                    "https://firebasestorage.googleapis.com/v0/b/app-2-d919d.appspot.com/o/website_logos%2FJalad%20Seva.png?alt=media&token=733510d9-f354-43c0-9562-a9c21f4c5ff1"
+                  }
+                  alt=""
+                  className="w-28 h-28 "
+                />
               </Link>
             </div>
             <ul className="pl-8 space-y-10 font-semibold text-center mt-7">

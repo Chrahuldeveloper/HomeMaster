@@ -3,7 +3,6 @@ import { CiInstagram } from "react-icons/ci";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-import logo from "../../src/images/logo.png";
 import { Link } from "react-router-dom";
 import TermsConditions from "./TermsConditions";
 import Privacy from "./Privacy";
@@ -18,9 +17,11 @@ export default function Footer() {
       <footer className="bg-[#f5f5f5] md:h-[60vh] p-10 text-center">
         <div className="pr-4 lg:px-44">
           <img
-            src={logo}
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/app-2-d919d.appspot.com/o/website_logos%2FJalad%20Seva.png?alt=media&token=733510d9-f354-43c0-9562-a9c21f4c5ff1"
+            }
             alt=""
-            className="w-16 h-16 mx-auto rounded-full shadow-sm cursor-pointer lg:mx-0"
+            className="w-24 h-24 mx-auto rounded-full shadow-sm cursor-pointer lg:mx-0"
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-10 my-10 mb-20 md:flex-row md:items-start md:justify-evenly">

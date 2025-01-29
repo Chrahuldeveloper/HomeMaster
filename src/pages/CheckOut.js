@@ -223,7 +223,6 @@ export default function CheckOut() {
 
         const order = await response.json();
         console.log(order);
-        // parseInt(data.state.Price.replace("Rs ", ""))
         var options = {
           key: "rzp_live_i2gDh0i5XmpOAi",
           amount: parseInt(data.state.Price.replace("Rs ", "")) * 100,
@@ -255,6 +254,7 @@ export default function CheckOut() {
           },
           prefill: {
             email: Email,
+            phone : "9822667624"
           },
           notes: {
             address:

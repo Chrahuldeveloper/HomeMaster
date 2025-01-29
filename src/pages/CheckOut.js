@@ -205,8 +205,9 @@ export default function CheckOut() {
         await updateDoc(userDocRef, { orders: updatedOrders });
         notify();
       } else {
+        console.log("clicked online");
         const response = await fetch(
-          "https://payment-server-w9t3.onrender.com/order",
+          "https://payment-server-o17n.onrender.com/order",
           {
             method: "POST",
             body: JSON.stringify({
@@ -222,7 +223,7 @@ export default function CheckOut() {
 
         const order = await response.json();
         console.log(order);
-
+        // parseInt(data.state.Price.replace("Rs ", ""))
         var options = {
           key: "rzp_live_i2gDh0i5XmpOAi",
           amount: parseInt(data.state.Price.replace("Rs ", "")) * 100,
@@ -253,9 +254,7 @@ export default function CheckOut() {
             notify();
           },
           prefill: {
-            name: "JaladSeva",
-            email: "jaladseva@gmail.com",
-            contact: "8622949494",
+            email: Email,
           },
           notes: {
             address:

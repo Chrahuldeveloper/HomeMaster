@@ -21,7 +21,7 @@ export default function Explore() {
     },
     {
       tittle: "Pest Control",
-      image: "https://homemaster.in/upload/service/Plumbing.jpg",
+      image: "https://homemaster.in/upload/serviceimages/24.jpg",
     },
     {
       tittle: "Electrical & Plumbing",

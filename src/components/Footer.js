@@ -77,13 +77,16 @@ export default function Footer() {
                   className="bg-white w-10 h-10 shadow-md p-1.5 rounded-full cursor-pointer"
                 />
               </li>
-              <li>
-                <FaFacebookF
-                  size={24}
-                  color="black "
-                  className="bg-white w-10 h-10 shadow-md p-1.5 rounded-full cursor-pointer"
-                />
-              </li>
+             <li>
+  <a href="https://www.facebook.com/jaladseva" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF
+      size={24}
+      color="black"
+      className="bg-white w-10 h-10 shadow-md p-1.5 rounded-full cursor-pointer"
+    />
+  </a>
+</li>
+
               <li>
                 <FaTwitter
                   size={24}
